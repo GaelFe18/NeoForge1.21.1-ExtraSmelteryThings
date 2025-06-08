@@ -1,0 +1,12 @@
+{
+    "type": "extrasmelterythings:basic_alloyer_block",
+    "ingredient": {
+      "item": "extrasmelterythings:molten_iron"
+    },
+    "ingredient2": {
+        "item": "extrasmelterythings:coke"
+    },
+    "result": {
+        "id": "extrasmelterythings:molten_carbon_steel"
+    }
+}

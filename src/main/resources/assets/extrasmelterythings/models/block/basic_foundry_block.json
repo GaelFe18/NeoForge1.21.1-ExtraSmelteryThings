@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "extrasmelterythings:block/basic_foundry_block_bottom",
+    "up": "extrasmelterythings:block/basic_foundry_block_top",
+    "north": "extrasmelterythings:block/basic_foundry_block_front",
+    "east": "extrasmelterythings:block/basic_foundry_block_side",
+    "south": "extrasmelterythings:block/basic_foundry_block_side",
+    "west": "extrasmelterythings:block/basic_foundry_block_side",
+    "particle": "extrasmelterythings:block/basic_foundry_block_front"
+  },
+  "render_type": "solid"
+}

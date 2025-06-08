@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "extrasmelterythings:block/basic_foundry_block"
+    },
+    "facing=south": {
+      "model": "extrasmelterythings:block/basic_foundry_block",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "extrasmelterythings:block/basic_foundry_block",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "extrasmelterythings:block/basic_foundry_block",
+      "y": 270
+    }
+  }
+}

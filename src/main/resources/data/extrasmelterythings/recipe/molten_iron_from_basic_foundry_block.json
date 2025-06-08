@@ -1,0 +1,9 @@
+{
+    "type": "extrasmelterythings:basic_foundry_block",
+    "ingredient": {
+      "item": "minecraft:raw_iron"
+    },
+    "result": {
+        "id": "extrasmelterythings:molten_iron"
+    }
+}

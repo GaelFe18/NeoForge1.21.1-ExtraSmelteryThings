@@ -1,0 +1,9 @@
+{
+    "type": "extrasmelterythings:basic_foundry_block",
+    "ingredient": {
+      "item": "minecraft:coal"
+    },
+    "result": {
+        "id": "extrasmelterythings:burning_coal"
+    }
+}

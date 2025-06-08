@@ -1,0 +1,29 @@
+{
+  "item.extrasmelterythings.ores_polisher": "Ores Polisher",
+  "item.extrasmelterythings.dirty_raw_iron": "Dirty Raw Iron",
+  "item.extrasmelterythings.burning_coal": "Burning Coal",
+  "item.extrasmelterythings.molten_iron": "Molten Iron",
+  "item.extrasmelterythings.coke": "Coke",
+  "item.extrasmelterythings.carbon_steel": "Carbon Steel",
+  "item.extrasmelterythings.molten_carbon_steel": "Molten Carbon Steel",
+
+  "block.extrasmelterythings.dirty_raw_iron_block": "Dirty Raw Iron Block",
+  "block.extrasmelterythings.basic_foundry_block": "Basic Foundry",
+  "block.extrasmelterythings.basic_alloyer_block": "Basic Alloyer",
+  "block.extrasmelterythings.basic_tank_block": "Basic Tank",
+
+  "tooltip.extrasmelterythings.coolable_item.shift_down":"This item can be cooled down by right clicking a cauldron",
+  "tooltip.extrasmelterythings.coolable_item":"Press §eShift§r for more info!",
+
+  "tooltip.extrasmelterythings.ores_polisher.shift_down": "This is used to polish dirty ores in the crafting grid",
+  "tooltip.extrasmelterythings.ores_polisher": "Press §eShift§r for more info!",
+
+  "tooltip.extrasmelterythings.burning_coal.shift_down": "This fuel lasts longer than coal and can be used in foundries",
+  "tooltip.extrasmelterythings.burning_coal": "Press §eShift§r for more info!",
+
+  "tooltip.extrasmelterythings.coke.shift_down": "This fuel lasts longer than coal and can be used in alloyers to make carbon steel and foundries as fuel",
+  "tooltip.extrasmelterythings.coke":"Press §eShift§r for more info!",
+
+  "creativetab.extrasmelterythings.extrasmelterythings_items": "EST Items",
+  "creativetab.extrasmelterythings.extrasmelterythings_blocks": "EST Blocks "
+}

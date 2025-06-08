@@ -1,0 +1,9 @@
+{
+    "type": "extrasmelterythings:basic_foundry_block",
+    "ingredient": {
+      "item": "extrasmelterythings:carbon_steel"
+    },
+    "result": {
+        "id": "extrasmelterythings:molten_carbon_steel"
+    }
+}
