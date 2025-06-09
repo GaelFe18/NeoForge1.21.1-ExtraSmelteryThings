@@ -1,0 +1,5 @@
+// 1.21.1	2025-06-08T17:24:25.7306283	Global Loot Modifiers : extrasmelterythings
+d9829f7355923686e8c3f6153de25bef5d6aff40 data/extrasmelterythings/loot_modifiers/dirty_raw_iron_from_deepslate_iron_ore.json
+3c6b2c28e4caebbc46b2904c332afc8a7464fbc3 data/extrasmelterythings/loot_modifiers/dirty_raw_iron_from_iron_ore.json
+21dfc7e6c5d5fc5260b24310378fab9fc43fa5d8 data/extrasmelterythings/loot_modifiers/dirty_raw_iron_from_raw_iron_block.json
+238fab469837a45a8dfa015a4289087355c7e013 data/neoforge/loot_modifiers/global_loot_modifiers.json

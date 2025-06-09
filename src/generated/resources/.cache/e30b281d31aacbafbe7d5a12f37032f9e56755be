@@ -1,0 +1,5 @@
+// 1.21.1	2025-06-08T17:24:25.7326277	Tags for minecraft:item mod id extrasmelterythings
+cdc7bd5c1305a719fed30ea657011d691199589b data/extrasmelterythings/tags/item/high_fuels.json
+50e13739c5004ff1f5177fb29ecff7b5d3d45cd3 data/extrasmelterythings/tags/item/low_fuels.json
+c10b2d2b402581ca8fbaed3aaa0be88642a828a8 data/extrasmelterythings/tags/item/mid_fuels.json
+6db1903221e5bdaad42bd26bc6c5e909dfaf6207 data/extrasmelterythings/tags/item/molten_ores.json

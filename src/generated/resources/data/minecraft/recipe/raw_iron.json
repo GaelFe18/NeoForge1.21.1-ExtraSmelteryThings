@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extrasmelterythings:dirty_raw_iron"
+    },
+    {
+      "item": "extrasmelterythings:ores_polisher"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:raw_iron"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "extrasmelterythings:add_item",
+  "conditions": [
+    {
+      "block": "minecraft:deepslate_iron_ore",
+      "condition": "minecraft:block_state_property"
+    },
+    {
+      "chance": 1.0,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "extrasmelterythings:dirty_raw_iron"
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:cobblestone"
+    },
+    "D": {
+      "item": "minecraft:dropper"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    }
+  },
+  "pattern": [
+    "CDC",
+    "GGG",
+    "CCC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extrasmelterythings:basic_tank_block"
+  }
+}

@@ -1,0 +1,5 @@
+// 1.21.1	2025-06-08T17:24:25.7316277	Loot Tables
+f41d39999e427a6657a0fe1b04260d8d954afb76 data/extrasmelterythings/loot_table/blocks/basic_alloyer_block.json
+0f3b3e2bb7f50cd51250b9afb5d2c03afb352499 data/extrasmelterythings/loot_table/blocks/basic_foundry_block.json
+9ca31b7f4cce6fa07291bf00447e7e4f415b78d3 data/extrasmelterythings/loot_table/blocks/basic_tank_block.json
+ea6d010d87eec28d4145cd1537fa8d5cbcaf9dd0 data/extrasmelterythings/loot_table/blocks/dirty_raw_iron_block.json

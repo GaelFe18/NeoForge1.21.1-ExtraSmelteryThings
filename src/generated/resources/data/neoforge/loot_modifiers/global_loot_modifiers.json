@@ -1,0 +1,8 @@
+{
+  "entries": [
+    "extrasmelterythings:dirty_raw_iron_from_iron_ore",
+    "extrasmelterythings:dirty_raw_iron_from_deepslate_iron_ore",
+    "extrasmelterythings:dirty_raw_iron_from_raw_iron_block"
+  ],
+  "replace": false
+}
