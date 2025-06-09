@@ -39,6 +39,7 @@ public class DataGenerators {
 
         generator.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(packOutput, lookupProvider));
 
-    }
+        /*generator.addProvider(event.includeServer(), new ModSlotCurios(ExtraSmelteryThings.MOD_ID, packOutput, existingFileHelper, lookupProvider));*/
 
+    }
 }

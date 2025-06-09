@@ -14,6 +14,8 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import top.theillusivec4.curios.api.type.capability.ICurioItem;
+import top.theillusivec4.curios.api.type.data.ISlotData;
 
 import java.util.List;
 
@@ -25,7 +27,9 @@ public class CoolableItem extends Item {
 
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-        entity.lavaHurt();
+        if(entity.fireImmune()){
+        }
+        else entity.lavaHurt();
     }
 
     @Override
@@ -37,7 +41,7 @@ public class CoolableItem extends Item {
             if(!level.isClientSide){
                 ItemStack item = itemForEachCoolable(pContext);
                 pContext.getPlayer().setItemInHand(InteractionHand.MAIN_HAND, item);
-
+                
             }
         }
         return InteractionResult.SUCCESS;
