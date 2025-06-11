@@ -60,6 +60,7 @@ public class ExtraSmelteryThings
 
         ModLootModifiers.register(modEventBus);
 
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 

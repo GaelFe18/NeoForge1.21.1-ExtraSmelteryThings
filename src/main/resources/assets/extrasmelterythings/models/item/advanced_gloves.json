@@ -1,0 +1,18 @@
+{
+	"parent": "minecraft:item/handheld",
+	"loader": "neoforge:separate_transforms",
+	"base": {
+		"parent": "extrasmelterythings:item/advanced_gloves_3d"
+	},
+	"perspectives": {
+		"gui": {
+			"parent": "extrasmelterythings:item/advanced_gloves_2d"
+		},
+		"ground": {
+			"parent": "extrasmelterythings:item/advanced_gloves_2d"
+		},
+		"fixed": {
+			"parent": "extrasmelterythings:item/advanced_gloves_2d"
+		}
+	}
+}

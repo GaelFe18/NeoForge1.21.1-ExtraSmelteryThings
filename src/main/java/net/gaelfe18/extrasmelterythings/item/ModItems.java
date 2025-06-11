@@ -3,6 +3,7 @@ package net.gaelfe18.extrasmelterythings.item;
 import net.gaelfe18.extrasmelterythings.ExtraSmelteryThings;
 import net.gaelfe18.extrasmelterythings.item.custom.CoolableItem;
 import net.gaelfe18.extrasmelterythings.item.custom.FuelItem;
+import net.gaelfe18.extrasmelterythings.item.custom.GlovesItem;
 import net.gaelfe18.extrasmelterythings.item.custom.PolisherItem;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -19,6 +20,9 @@ import java.util.List;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExtraSmelteryThings.MOD_ID);
+
+    public static final DeferredItem<Item> ADVANCED_GLOVES = ITEMS.register("advanced_gloves",
+            () -> new GlovesItem(new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> ORES_POLISHER = ITEMS.register("ores_polisher",
         () -> new PolisherItem(new Item.Properties().durability(10).rarity(Rarity.COMMON)));

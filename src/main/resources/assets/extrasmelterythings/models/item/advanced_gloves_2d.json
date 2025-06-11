@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "extrasmelterythings:item/advanced_gloves_2d"
+	}
+}

@@ -1,4 +1,5 @@
 {
+  "item.extrasmelterythings.advanced_gloves": "Advanced Gloves",
   "item.extrasmelterythings.ores_polisher": "Ores Polisher",
   "item.extrasmelterythings.dirty_raw_iron": "Dirty Raw Iron",
   "item.extrasmelterythings.burning_coal": "Burning Coal",
@@ -12,8 +13,12 @@
   "block.extrasmelterythings.basic_alloyer_block": "Basic Alloyer",
   "block.extrasmelterythings.basic_tank_block": "Basic Tank",
 
+
   "tooltip.extrasmelterythings.coolable_item.shift_down":"This item can be cooled down by right clicking a cauldron",
   "tooltip.extrasmelterythings.coolable_item":"Press §eShift§r for more info!",
+
+  "tooltip.extrasmelterythings.gloves.shift_down": "This gloves protects you from getting burnt from molten ores",
+  "tooltip.extrasmelterythings.gloves": "Press §eShift§r for more info!",
 
   "tooltip.extrasmelterythings.ores_polisher.shift_down": "This is used to polish dirty ores in the crafting grid",
   "tooltip.extrasmelterythings.ores_polisher": "Press §eShift§r for more info!",
