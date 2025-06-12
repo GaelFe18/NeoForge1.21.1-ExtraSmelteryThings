@@ -37,9 +37,11 @@ public class CoolableItem extends Item {
             ICurioStacksHandler slotInventory = curios.get("hands");
             // null check to ensure that the slot inventory exists
             if (slotInventory != null) {
-                if(slotInventory.getStacks().getStackInSlot(0).getItem() != ModItems.ADVANCED_GLOVES.get()){
-                    entity.lavaHurt();
-                }
+                if (slotInventory.getStacks().getStackInSlot(0).getItem() == ModItems.BASIC_GLOVES.get()) {
+                    slotInventory.getStacks().getStackInSlot(0).setDamageValue(slotInventory.getStacks().getStackInSlot(0).getDamageValue() + 1);
+                } else if (slotInventory.getStacks().getStackInSlot(0).getItem() == ModItems.ADVANCED_GLOVES.get()) {
+                    slotInventory.getStacks().getStackInSlot(0).setDamageValue(slotInventory.getStacks().getStackInSlot(0).getDamageValue() + 1);
+                } else entity.lavaHurt();
             }
         }
     }

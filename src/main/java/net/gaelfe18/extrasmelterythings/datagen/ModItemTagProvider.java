@@ -21,6 +21,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+        tag(ModTags.Items.MOLTENCARBONSTEEL)
+                .add(ModItems.MOLTEN_CARBON_STEEL.get());
+        tag(ModTags.Items.MOLTENIRON)
+                .add(ModItems.MOLTEN_IRON.get());
         tag(ModTags.Items.MOLTENORES)
                 .add(ModItems.MOLTEN_IRON.get())
                 .add(ModItems.MOLTEN_CARBON_STEEL.get());

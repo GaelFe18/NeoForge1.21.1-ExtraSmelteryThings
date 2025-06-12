@@ -21,6 +21,7 @@ public class ModCreativeTabs {
                     .title(Component.translatable("creativetab.extrasmelterythings.extrasmelterythings_items"))
                     .displayItems((itemDisplayParameters, output) -> {
                         //abajo el input del item
+                        output.accept(ModItems.BASIC_GLOVES.get());
                         output.accept(ModItems.ADVANCED_GLOVES.get());
                         output.accept(ModItems.ORES_POLISHER.get());
                         output.accept(ModItems.CARBON_STEEL.get());

@@ -21,8 +21,11 @@ import java.util.List;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExtraSmelteryThings.MOD_ID);
 
+    public static final DeferredItem<Item> BASIC_GLOVES = ITEMS.register("basic_gloves",
+            () -> new GlovesItem(new Item.Properties().durability(400)));
+
     public static final DeferredItem<Item> ADVANCED_GLOVES = ITEMS.register("advanced_gloves",
-            () -> new GlovesItem(new Item.Properties().stacksTo(1)));
+            () -> new GlovesItem(new Item.Properties().durability(1000)));
 
     public static final DeferredItem<Item> ORES_POLISHER = ITEMS.register("ores_polisher",
         () -> new PolisherItem(new Item.Properties().durability(10).rarity(Rarity.COMMON)));

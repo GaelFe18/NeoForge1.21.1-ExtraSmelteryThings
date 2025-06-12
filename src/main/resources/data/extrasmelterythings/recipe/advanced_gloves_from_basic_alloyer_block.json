@@ -1,0 +1,12 @@
+{
+    "type": "extrasmelterythings:basic_alloyer_block",
+    "ingredient": {
+      "item": "extrasmelterythings:basic_gloves"
+    },
+    "ingredient2": {
+        "tag": "extrasmelterythings:carbon_steel"
+    },
+    "result": {
+        "id": "extrasmelterythings:advanced_gloves"
+    }
+}

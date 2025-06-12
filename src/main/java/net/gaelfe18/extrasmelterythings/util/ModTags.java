@@ -17,6 +17,8 @@ public class ModTags {
         }
     }
     public static class Items{
+        public static TagKey<Item> MOLTENCARBONSTEEL = createTag("molten_carbon_steel");
+        public static TagKey<Item> MOLTENIRON = createTag("molten_iron");
         public static TagKey<Item> MOLTENORES = createTag("molten_ores");
         public static TagKey<Item> HIGHFUELITEMS = createTag("high_fuels");
         public static TagKey<Item> MIDFUELITEMS = createTag("mid_fuels");
