@@ -9,7 +9,6 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -21,20 +20,37 @@ import java.util.List;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExtraSmelteryThings.MOD_ID);
 
+    public static final DeferredItem<Item> EMPTY_SWORD_EDGE_MOLD = ITEMS.register("empty_sword_edge_mold",
+            () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> BASIC_GLOVES = ITEMS.register("basic_gloves",
-            () -> new GlovesItem(new Item.Properties().durability(400)));
+            () -> new GlovesItem(new Item.Properties().durability(340)){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
+                    pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.basic.tier"));
+
+                    super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
+                }
+            });
 
     public static final DeferredItem<Item> ADVANCED_GLOVES = ITEMS.register("advanced_gloves",
-            () -> new GlovesItem(new Item.Properties().durability(1000)));
+            () -> new GlovesItem(new Item.Properties().durability(1000)){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> pTooltipComponents, TooltipFlag tooltipFlag) {
+                    pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.advanced.tier"));
+
+                    super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
+                }
+            });
 
     public static final DeferredItem<Item> ORES_POLISHER = ITEMS.register("ores_polisher",
-        () -> new PolisherItem(new Item.Properties().durability(10).rarity(Rarity.COMMON)));
+            () -> new PolisherItem(new Item.Properties().durability(10)));
 
     public static final DeferredItem<Item> DIRTY_RAW_IRON = ITEMS.register("dirty_raw_iron",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> MOLTEN_IRON = ITEMS.register("molten_iron",
-        () -> new CoolableItem(new Item.Properties()));
+            () -> new CoolableItem(new Item.Properties()));
 
     public static final DeferredItem<Item> MOLTEN_CARBON_STEEL = ITEMS.register("molten_carbon_steel",
             () -> new CoolableItem(new Item.Properties()));
@@ -66,7 +82,7 @@ public class ModItems {
 
                     super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
                 }
-    });
+            });
 
 
     public static void register(IEventBus eventBus) {

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extrasmelterythings:dirty_raw_iron_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "extrasmelterythings:dirty_raw_iron"
+  }
+}

@@ -47,9 +47,9 @@ public class BasicFoundryBlockEntity extends BlockEntity implements MenuProvider
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 80;
+    private int maxProgress = 160;
     private int currentFuel = 0;
-    private int maxFuel = 720;
+    private int maxFuel = 1280;
 
     public BasicFoundryBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.BASIC_FOUNDRY_BLOCK_BE.get(), pPos, pBlockState);
@@ -145,17 +145,17 @@ public class BasicFoundryBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private void cookTimeForEachFuel(ItemStack fuelSlotItemStack) {
-        if(fuelSlotItemStack.is(ModTags.Items.LOWFUELITEMS) && currentFuel <= maxFuel -80) {
-            itemHandler.extractItem(FUEL_SLOT, 1, false);
-            currentFuel += 80;
-        }
-        if(fuelSlotItemStack.is(ModTags.Items.MIDFUELITEMS) && currentFuel <= maxFuel -160) {
+        if(fuelSlotItemStack.is(ModTags.Items.LOWFUELITEMS) && currentFuel <= maxFuel -160) {
             itemHandler.extractItem(FUEL_SLOT, 1, false);
             currentFuel += 160;
         }
-        if(fuelSlotItemStack.is(ModTags.Items.HIGHFUELITEMS) && currentFuel <= maxFuel -240) {
+        if(fuelSlotItemStack.is(ModTags.Items.MIDFUELITEMS) && currentFuel <= maxFuel -320) {
             itemHandler.extractItem(FUEL_SLOT, 1, false);
-            currentFuel += 240;
+            currentFuel += 320;
+        }
+        if(fuelSlotItemStack.is(ModTags.Items.HIGHFUELITEMS) && currentFuel <= maxFuel -640) {
+            itemHandler.extractItem(FUEL_SLOT, 1, false);
+            currentFuel += 640;
         }
     }
 
@@ -173,7 +173,7 @@ public class BasicFoundryBlockEntity extends BlockEntity implements MenuProvider
 
     private void resetProgress() {
         this.progress = 0;
-        this.maxProgress = 80;
+        this.maxProgress = 160;
     }
 
     private void craftItem() {

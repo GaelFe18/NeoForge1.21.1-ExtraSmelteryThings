@@ -1,6 +1,7 @@
 package net.gaelfe18.extrasmelterythings.item.custom;
 
 import net.gaelfe18.extrasmelterythings.item.ModItems;
+import net.gaelfe18.extrasmelterythings.util.ModTags;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -38,11 +39,18 @@ public class CoolableItem extends Item {
             // null check to ensure that the slot inventory exists
             if (slotInventory != null) {
                 if (slotInventory.getStacks().getStackInSlot(0).getItem() == ModItems.BASIC_GLOVES.get()) {
-                    slotInventory.getStacks().getStackInSlot(0).setDamageValue(slotInventory.getStacks().getStackInSlot(0).getDamageValue() + 1);
+                    damageItemStack(slotInventory);
                 } else if (slotInventory.getStacks().getStackInSlot(0).getItem() == ModItems.ADVANCED_GLOVES.get()) {
-                    slotInventory.getStacks().getStackInSlot(0).setDamageValue(slotInventory.getStacks().getStackInSlot(0).getDamageValue() + 1);
+                    damageItemStack(slotInventory);
                 } else entity.lavaHurt();
             }
+        }
+    }
+
+    void damageItemStack(ICurioStacksHandler slotInventory) {
+        slotInventory.getStacks().getStackInSlot(0).setDamageValue(slotInventory.getStacks().getStackInSlot(0).getDamageValue() + 1);
+        if (slotInventory.getStacks().getStackInSlot(0).getDamageValue() == slotInventory.getStacks().getStackInSlot(0).getMaxDamage()) {
+            slotInventory.getStacks().getStackInSlot(0).setCount(slotInventory.getStacks().getStackInSlot(0).getCount() - 1);
         }
     }
 
@@ -55,7 +63,6 @@ public class CoolableItem extends Item {
             if(!level.isClientSide){
                 ItemStack item = itemForEachCoolable(pContext);
                 pContext.getPlayer().setItemInHand(InteractionHand.MAIN_HAND, item);
-                
             }
         }
         return InteractionResult.SUCCESS;
@@ -63,11 +70,11 @@ public class CoolableItem extends Item {
 
     private ItemStack itemForEachCoolable(UseOnContext pContext) {
         int itemCount = pContext.getItemInHand().getCount();
-        if(pContext.getItemInHand().is(ModItems.MOLTEN_IRON.get())) {
+        if(pContext.getItemInHand().is(ModTags.Items.MOLTENIRON)) {
             return new ItemStack(Items.IRON_INGOT, itemCount);
         }
 
-        if(pContext.getItemInHand().is(ModItems.MOLTEN_CARBON_STEEL.get())){
+        if(pContext.getItemInHand().is(ModTags.Items.MOLTENCARBONSTEEL)){
             return new ItemStack(ModItems.CARBON_STEEL.get(), itemCount);
         }
          return null;

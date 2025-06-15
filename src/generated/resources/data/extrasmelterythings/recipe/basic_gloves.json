@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    }
+  },
+  "pattern": [
+    "LLL",
+    "LIL",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extrasmelterythings:basic_gloves"
+  }
+}

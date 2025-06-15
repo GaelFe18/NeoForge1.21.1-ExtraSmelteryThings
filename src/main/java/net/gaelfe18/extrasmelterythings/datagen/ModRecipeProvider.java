@@ -17,6 +17,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BASIC_GLOVES.get())
+                .pattern("LLL")
+                .pattern("LIL")
+                .pattern("   ")
+                .define('L', Items.LEATHER)
+                .define('I', Items.IRON_INGOT)
+                .unlockedBy(getHasName(Items.LEATHER), has(Items.LEATHER))
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT)).save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.DIRTY_RAW_IRON_BLOCK.get())
                 .pattern("DDD")
                 .pattern("DDD")
@@ -61,6 +71,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.COBBLESTONE), has(Items.COBBLESTONE))
                 .unlockedBy(getHasName(Items.GLASS), has(Items.GLASS))
                 .unlockedBy(getHasName(Items.DROPPER), has(Items.DROPPER)).save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.DIRTY_RAW_IRON.get(),9)
+                .requires(ModBlocks.DIRTY_RAW_IRON_BLOCK.get())
+                .unlockedBy(getHasName(ModBlocks.DIRTY_RAW_IRON_BLOCK.get()), has(ModBlocks.DIRTY_RAW_IRON_BLOCK.get())).save(recipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.RAW_IRON,1)
                 .requires(ModItems.DIRTY_RAW_IRON.get())
