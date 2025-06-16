@@ -17,10 +17,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        this.dropSelf(ModBlocks.MOLDING_FORGE_BLOCK.get());
         this.dropSelf(ModBlocks.BASIC_ALLOYER_BLOCK.get());
         this.dropSelf(ModBlocks.BASIC_FOUNDRY_BLOCK.get());
         this.dropSelf(ModBlocks.BASIC_TANK_BLOCK.get());
-        dropSelf(ModBlocks.DIRTY_RAW_IRON_BLOCK.get());
+        this.dropSelf(ModBlocks.DIRTY_RAW_IRON_BLOCK.get());
     }
 
     @Override

@@ -2,6 +2,7 @@ package net.gaelfe18.extrasmelterythings;
 
 import net.gaelfe18.extrasmelterythings.block.ModBlocks;
 import net.gaelfe18.extrasmelterythings.block.entity.ModBlockEntities;
+import net.gaelfe18.extrasmelterythings.block.entity.renderer.MoldingForgeBlockEntityRenderer;
 import net.gaelfe18.extrasmelterythings.item.ModCreativeTabs;
 import net.gaelfe18.extrasmelterythings.item.ModItems;
 import net.gaelfe18.extrasmelterythings.loot.ModLootModifiers;
@@ -10,6 +11,7 @@ import net.gaelfe18.extrasmelterythings.screen.ModMenuTypes;
 import net.gaelfe18.extrasmelterythings.screen.custom.BasicAlloyerBlockScreen;
 import net.gaelfe18.extrasmelterythings.screen.custom.BasicFoundryBlockScreen;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
@@ -90,6 +92,11 @@ public class ExtraSmelteryThings {
         public static void onClientSetup(RegisterMenuScreensEvent event) {
             event.register(ModMenuTypes.BASIC_FOUNDRY_BLOCK_MENU.get(), BasicFoundryBlockScreen::new);
             event.register(ModMenuTypes.BASIC_ALLOYER_BLOCK_MENU.get(), BasicAlloyerBlockScreen::new);
+        }
+
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event){
+            event.registerBlockEntityRenderer(ModBlockEntities.MOLDING_FORGE_BLOCK_BE.get(), MoldingForgeBlockEntityRenderer::new);
         }
     }
 }

@@ -23,6 +23,7 @@ public class ModCreativeTabs {
                         //abajo el input del item
                         output.accept(ModItems.BASIC_GLOVES.get());
                         output.accept(ModItems.ADVANCED_GLOVES.get());
+                        output.accept(ModItems.BASIC_MOLDING_HAMMER.get());
                         output.accept(ModItems.ORES_POLISHER.get());
                         output.accept(ModItems.CARBON_STEEL.get());
                         output.accept(ModItems.MOLTEN_CARBON_STEEL.get());
@@ -40,6 +41,7 @@ public class ModCreativeTabs {
                     .title(Component.translatable("creativetab.extrasmelterythings.extrasmelterythings_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
                         //abajo el input del bloque
+                        output.accept(ModBlocks.MOLDING_FORGE_BLOCK.get());
                         output.accept(ModBlocks.BASIC_FOUNDRY_BLOCK.get());
                         output.accept(ModBlocks.BASIC_TANK_BLOCK.get());
                         output.accept(ModBlocks.BASIC_ALLOYER_BLOCK.get());

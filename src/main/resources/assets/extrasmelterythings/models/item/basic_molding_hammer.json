@@ -1,0 +1,18 @@
+{
+	"parent": "minecraft:item/handheld",
+	"loader": "neoforge:separate_transforms",
+	"base": {
+		"parent": "extrasmelterythings:item/basic_molding_hammer_3d"
+	},
+	"perspectives": {
+		"gui": {
+			"parent": "extrasmelterythings:item/basic_molding_hammer_2d"
+		},
+		"ground": {
+			"parent": "extrasmelterythings:item/basic_molding_hammer_2d"
+		},
+		"fixed": {
+			"parent": "extrasmelterythings:item/basic_molding_hammer_2d"
+		}
+	}
+}

@@ -20,9 +20,6 @@ import java.util.List;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExtraSmelteryThings.MOD_ID);
 
-    public static final DeferredItem<Item> EMPTY_SWORD_EDGE_MOLD = ITEMS.register("empty_sword_edge_mold",
-            () -> new Item(new Item.Properties()));
-
     public static final DeferredItem<Item> BASIC_GLOVES = ITEMS.register("basic_gloves",
             () -> new GlovesItem(new Item.Properties().durability(340)){
                 @Override
@@ -40,6 +37,20 @@ public class ModItems {
                     pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.advanced.tier"));
 
                     super.appendHoverText(stack, context, pTooltipComponents, tooltipFlag);
+                }
+            });
+
+    public static final DeferredItem<Item> BASIC_MOLDING_HAMMER = ITEMS.register("basic_molding_hammer",
+            () -> new Item(new Item.Properties().durability(6)){
+                @Override
+                public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+                    pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.basic.tier"));
+                    if(Screen.hasShiftDown()){
+                        pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.molding_hammer.shift_down"));
+                    }
+                    else pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.press_shift"));
+
+                    super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
                 }
             });
 
@@ -65,7 +76,7 @@ public class ModItems {
                     if(Screen.hasShiftDown()){
                         pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.coke.shift_down"));
                     }
-                    else pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.coke"));
+                    else pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.press_shift"));
 
                     super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
                 }
@@ -78,7 +89,7 @@ public class ModItems {
                     if(Screen.hasShiftDown()){
                         pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.burning_coal.shift_down"));
                     }
-                    else pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.burning_coal"));
+                    else pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.press_shift"));
 
                     super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
                 }

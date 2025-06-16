@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "extrasmelterythings:block/molding_forge_block",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "extrasmelterythings:block/molding_forge_block",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "extrasmelterythings:block/molding_forge_block"
+    },
+    "facing=west": {
+      "model": "extrasmelterythings:block/molding_forge_block",
+      "y": 90
+    }
+  }
+}

@@ -85,8 +85,7 @@ public class CoolableItem extends Item {
         if(Screen.hasShiftDown()){
             pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.coolable_item.shift_down"));
         }
-        else pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.coolable_item"));
-
+        else pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.press_shift"));
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
     }
 

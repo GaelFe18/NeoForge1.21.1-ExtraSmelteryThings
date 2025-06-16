@@ -4,6 +4,7 @@ import net.gaelfe18.extrasmelterythings.ExtraSmelteryThings;
 import net.gaelfe18.extrasmelterythings.block.custom.BasicAlloyerBlock;
 import net.gaelfe18.extrasmelterythings.block.custom.BasicFoundryBlock;
 import net.gaelfe18.extrasmelterythings.block.custom.BasicTankBlock;
+import net.gaelfe18.extrasmelterythings.block.custom.MoldingForgeBlock;
 import net.gaelfe18.extrasmelterythings.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -22,6 +23,10 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> DIRTY_RAW_IRON_BLOCK = registerBlock("dirty_raw_iron_block",
             () -> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
+    public static final DeferredBlock<Block> MOLDING_FORGE_BLOCK = registerBlock("molding_forge_block",
+            () -> new MoldingForgeBlock(BlockBehaviour.Properties.of().noOcclusion()
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)));
 
     public static final DeferredBlock<Block> BASIC_FOUNDRY_BLOCK = registerBlock("basic_foundry_block",
             () -> new BasicFoundryBlock(BlockBehaviour.Properties.of().noOcclusion()

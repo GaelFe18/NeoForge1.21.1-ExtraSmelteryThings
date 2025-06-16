@@ -33,7 +33,7 @@ public class PolisherItem extends Item {
         if(Screen.hasShiftDown()){
             pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.ores_polisher.shift_down"));
         }
-        else pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.ores_polisher"));
+        else pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.press_shift"));
 
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
     }

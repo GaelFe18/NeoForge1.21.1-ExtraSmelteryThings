@@ -25,7 +25,7 @@ public class GlovesItem extends Item implements ICurioItem {
     public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
         if (Screen.hasShiftDown()) {
             pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.gloves.shift_down"));
-        } else pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.gloves"));
+        } else pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.press_shift"));
 
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
     }

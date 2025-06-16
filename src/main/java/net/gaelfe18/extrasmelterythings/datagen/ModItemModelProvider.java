@@ -22,6 +22,5 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.MOLTEN_IRON.get());
         basicItem(ModItems.DIRTY_RAW_IRON.get());
         basicItem(ModItems.ORES_POLISHER.get());
-        basicItem(ModItems.EMPTY_SWORD_EDGE_MOLD.get());
     }
 }

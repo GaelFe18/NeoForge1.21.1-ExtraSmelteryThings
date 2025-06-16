@@ -18,6 +18,26 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ORES_POLISHER.get())
+                .pattern("  F")
+                .pattern(" I ")
+                .pattern("S  ")
+                .define('S', Items.STICK)
+                .define('I', Items.IRON_INGOT)
+                .define('F', Items.FEATHER)
+                .unlockedBy(getHasName(Items.FEATHER), has(Items.FEATHER))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BASIC_MOLDING_HAMMER.get())
+                .pattern("III")
+                .pattern(" S ")
+                .pattern(" S ")
+                .define('S', Items.STICK)
+                .define('I', Items.IRON_BLOCK)
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .unlockedBy(getHasName(Items.IRON_BLOCK), has(Items.IRON_BLOCK)).save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BASIC_GLOVES.get())
                 .pattern("LLL")
                 .pattern("LIL")
