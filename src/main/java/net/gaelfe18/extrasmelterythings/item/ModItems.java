@@ -60,6 +60,12 @@ public class ModItems {
     public static final DeferredItem<Item> DIRTY_RAW_IRON = ITEMS.register("dirty_raw_iron",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> MOLTEN_IRON_SWORD_EDGE = ITEMS.register("molten_iron_sword_edge",
+            () -> new CoolableItem(new Item.Properties()));
+
+    public static final DeferredItem<Item> SEMI_MOLTEN_IRON_SWORD_EDGE = ITEMS.register("semi_molten_iron_sword_edge",
+            () -> new CoolableItem(new Item.Properties()));
+
     public static final DeferredItem<Item> MOLTEN_IRON = ITEMS.register("molten_iron",
             () -> new CoolableItem(new Item.Properties()));
 

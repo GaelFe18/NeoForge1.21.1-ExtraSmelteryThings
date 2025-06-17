@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 50,
+  "experience": 0.7,
+  "group": "iron_nugget",
+  "ingredient": {
+    "item": "extrasmelterythings:dirty_raw_iron"
+  },
+  "result": {
+    "id": "minecraft:iron_nugget"
+  }
+}

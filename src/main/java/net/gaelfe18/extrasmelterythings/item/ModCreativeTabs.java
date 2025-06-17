@@ -28,6 +28,8 @@ public class ModCreativeTabs {
                         output.accept(ModItems.CARBON_STEEL.get());
                         output.accept(ModItems.MOLTEN_CARBON_STEEL.get());
                         output.accept(ModItems.COKE.get());
+                        output.accept(ModItems.MOLTEN_IRON_SWORD_EDGE.get());
+                        output.accept(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get());
                         output.accept(ModItems.MOLTEN_IRON.get());
                         output.accept(ModItems.DIRTY_RAW_IRON.get());
                         output.accept(ModItems.BURNING_COAL.get());

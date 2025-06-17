@@ -2,6 +2,7 @@ package net.gaelfe18.extrasmelterythings.datagen;
 
 import net.gaelfe18.extrasmelterythings.block.ModBlocks;
 import net.gaelfe18.extrasmelterythings.item.ModItems;
+import net.minecraft.client.gui.screens.recipebook.SmeltingRecipeBookComponent;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;

@@ -24,7 +24,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ModTags.Items.MOLTENCARBONSTEEL)
                 .add(ModItems.MOLTEN_CARBON_STEEL.get());
         tag(ModTags.Items.MOLTENIRON)
-                .add(ModItems.MOLTEN_IRON.get());
+                .add(ModItems.MOLTEN_IRON.get())
+                .add(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get())
+                .add(ModItems.MOLTEN_IRON_SWORD_EDGE.get());
         tag(ModTags.Items.MOLTENORES)
                 .add(ModItems.MOLTEN_IRON.get())
                 .add(ModItems.MOLTEN_CARBON_STEEL.get());
