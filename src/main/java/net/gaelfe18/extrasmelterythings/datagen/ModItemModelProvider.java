@@ -15,14 +15,34 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        basicItem(ModItems.BURNING_COAL.get());
-        basicItem(ModItems.COKE.get());
-        basicItem(ModItems.CARBON_STEEL.get());
-        basicItem(ModItems.MOLTEN_CARBON_STEEL.get());
+        //Tools:
+
+        basicItem(ModItems.ORES_POLISHER.get());
+
+        //Iron stuff:
+
+        basicItem(ModItems.DIRTY_RAW_IRON.get());
         basicItem(ModItems.MOLTEN_IRON.get());
         basicItem(ModItems.MOLTEN_IRON_SWORD_EDGE.get());
         basicItem(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get());
-        basicItem(ModItems.DIRTY_RAW_IRON.get());
-        basicItem(ModItems.ORES_POLISHER.get());
+        basicItem(ModItems.IRON_SWORD_HANDLE.get());
+        basicItem(ModItems.IRON_SWORD_EDGE.get());
+        basicItem(ModItems.IRON_MASS.get());
+        basicItem(ModItems.SEMI_MOLTEN_IRON_PICKAXE_HEAD.get());
+        basicItem(ModItems.MOLTEN_IRON_PICKAXE_HEAD.get());
+        basicItem(ModItems.IRON_PICKAXE_HEAD.get());
+
+        //Carbon steel stuff:
+
+        basicItem(ModItems.COKE.get());
+        basicItem(ModItems.CARBON_STEEL.get());
+        basicItem(ModItems.MOLTEN_CARBON_STEEL.get());
+
+        //Fuels:
+        basicItem(ModItems.BURNING_COAL.get());
+
+
+
+
     }
 }

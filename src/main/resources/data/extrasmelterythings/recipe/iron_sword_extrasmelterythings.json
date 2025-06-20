@@ -3,19 +3,19 @@
   "category": "misc",
   "key": {
     "I": {
-      "item": "minecraft:iron_block"
+      "item": "extrasmelterythings:iron_sword_edge"
     },
     "S": {
-      "item": "minecraft:stick"
+      "item": "extrasmelterythings:iron_sword_handle"
     }
   },
   "pattern": [
+    "   ",
     " I ",
-    " S ",
-    " S "
+    "S  "
   ],
   "result": {
     "count": 1,
-    "id": "extrasmelterythings:basic_molding_hammer"
+    "id": "minecraft:iron_sword"
   }
 }

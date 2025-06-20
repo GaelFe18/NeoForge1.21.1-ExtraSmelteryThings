@@ -3,7 +3,10 @@ package net.gaelfe18.extrasmelterythings.item.custom;
 import net.gaelfe18.extrasmelterythings.item.ModItems;
 import net.gaelfe18.extrasmelterythings.util.ModTags;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -24,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class CoolableItem extends Item {
+public class CoolableItem extends Item{
     public CoolableItem(Properties pProperties) {
         super(pProperties);
     }
@@ -63,16 +66,34 @@ public class CoolableItem extends Item {
             if(!level.isClientSide){
                 ItemStack item = itemForEachCoolable(pContext);
                 pContext.getPlayer().setItemInHand(InteractionHand.MAIN_HAND, item);
+                ((ServerLevel) level).sendParticles(ParticleTypes.BUBBLE_POP, pContext.getClickedPos().getX() + 0.5F,
+                        pContext.getClickedPos().getY() + 1F, pContext.getClickedPos().getZ() + 0.5F, 20, 0, 0,0,0.2);
             }
+            pContext.getPlayer().playSound(SoundEvents.FIRE_EXTINGUISH,1F, 1F);
         }
         return InteractionResult.SUCCESS;
     }
 
     private ItemStack itemForEachCoolable(UseOnContext pContext) {
         int itemCount = pContext.getItemInHand().getCount();
+        //Iron stuff:
+
         if(pContext.getItemInHand().is(ModTags.Items.MOLTENIRON)) {
-            return new ItemStack(Items.IRON_INGOT, itemCount);
-        }
+            return new ItemStack(Items.IRON_INGOT, itemCount); }
+
+        else if(pContext.getItemInHand().is(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get())) {
+            return new ItemStack(ModItems.IRON_MASS.get(), itemCount); }
+
+        else if(pContext.getItemInHand().is(ModItems.MOLTEN_IRON_SWORD_EDGE.get())) {
+            return new ItemStack(ModItems.IRON_SWORD_EDGE.get(), itemCount); }
+
+        else if(pContext.getItemInHand().is(ModItems.SEMI_MOLTEN_IRON_PICKAXE_HEAD.get())) {
+            return new ItemStack(ModItems.IRON_MASS.get(), itemCount); }
+
+        else if(pContext.getItemInHand().is(ModItems.MOLTEN_IRON_PICKAXE_HEAD.get())) {
+            return new ItemStack(ModItems.IRON_PICKAXE_HEAD.get(), itemCount); }
+
+        //Carbon steel stuff:
 
         if(pContext.getItemInHand().is(ModTags.Items.MOLTENCARBONSTEEL)){
             return new ItemStack(ModItems.CARBON_STEEL.get(), itemCount);

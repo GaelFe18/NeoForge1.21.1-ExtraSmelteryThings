@@ -2,20 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "item": "minecraft:iron_block"
+    "P": {
+      "item": "extrasmelterythings:iron_pickaxe_head"
     },
     "S": {
       "item": "minecraft:stick"
     }
   },
   "pattern": [
-    " I ",
+    "  P",
     " S ",
-    " S "
+    "S  "
   ],
   "result": {
     "count": 1,
-    "id": "extrasmelterythings:basic_molding_hammer"
+    "id": "minecraft:iron_pickaxe"
   }
 }

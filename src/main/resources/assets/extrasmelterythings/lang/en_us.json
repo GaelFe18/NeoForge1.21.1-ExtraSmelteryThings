@@ -1,6 +1,7 @@
 {
   "item.extrasmelterythings.basic_gloves": "Basic Gloves",
   "item.extrasmelterythings.advanced_gloves": "Advanced Gloves",
+  "item.extrasmelterythings.molding_hammer":"Molding Hammer",
   "item.extrasmelterythings.basic_molding_hammer": "Basic Molding Hammer",
   "item.extrasmelterythings.ores_polisher": "Ores Polisher",
   "item.extrasmelterythings.dirty_raw_iron": "Dirty Raw Iron",
@@ -8,6 +9,12 @@
   "item.extrasmelterythings.molten_iron": "Molten Iron",
   "item.extrasmelterythings.semi_molten_iron_sword_edge": "Semi Molten Iron Sword Edge",
   "item.extrasmelterythings.molten_iron_sword_edge": "Molten Iron Sword Edge",
+  "item.extrasmelterythings.iron_mass": "Iron Mass",
+  "item.extrasmelterythings.iron_sword_edge": "Iron Sword Edge",
+  "item.extrasmelterythings.iron_sword_handle": "Iron Sword Handle",
+  "item.extrasmelterythings.iron_pickaxe_head": "Iron Pickaxe Head",
+  "item.extrasmelterythings.molten_iron_pickaxe_head": "Molten Iron Pickaxe Head",
+  "item.extrasmelterythings.semi_molten_iron_pickaxe_head": "Semi Molten Iron Pickaxe Head",
   "item.extrasmelterythings.coke": "Coke",
   "item.extrasmelterythings.carbon_steel": "Carbon Steel",
   "item.extrasmelterythings.molten_carbon_steel": "Molten Carbon Steel",
@@ -25,8 +32,7 @@
   "tooltip.extrasmelterythings.industrial.tier": "§6Tier:§r §d§oIndustrial",
 
   "tooltip.extrasmelterythings.molding_hammer.shift_down":"This hammer is used to mold molten ores into shapes",
-
-  "tooltip.extrasmelterythings.coolable_item.shift_down":"This item can be cooled down by right clicking a cauldron",
+  "tooltip.extrasmelterythings.coolable_item.shift_down":"This item can be cooled down by right clicking a cauldron. §cDon't grab it with your bare hands",
 
   "tooltip.extrasmelterythings.gloves.shift_down": "This gloves protects you from getting burnt from molten ores",
 

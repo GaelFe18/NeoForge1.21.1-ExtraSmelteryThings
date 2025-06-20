@@ -20,18 +20,34 @@ public class ModCreativeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.MOLTEN_IRON.get()))
                     .title(Component.translatable("creativetab.extrasmelterythings.extrasmelterythings_items"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        //abajo el input del item
+
+                        //Tools:
                         output.accept(ModItems.BASIC_GLOVES.get());
                         output.accept(ModItems.ADVANCED_GLOVES.get());
                         output.accept(ModItems.BASIC_MOLDING_HAMMER.get());
                         output.accept(ModItems.ORES_POLISHER.get());
-                        output.accept(ModItems.CARBON_STEEL.get());
-                        output.accept(ModItems.MOLTEN_CARBON_STEEL.get());
-                        output.accept(ModItems.COKE.get());
+
+                        //Iron stuff:
+
+                        output.accept(ModItems.IRON_MASS.get());
+                        output.accept(ModItems.DIRTY_RAW_IRON.get());
                         output.accept(ModItems.MOLTEN_IRON_SWORD_EDGE.get());
                         output.accept(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get());
                         output.accept(ModItems.MOLTEN_IRON.get());
-                        output.accept(ModItems.DIRTY_RAW_IRON.get());
+                        output.accept(ModItems.IRON_SWORD_EDGE.get());
+                        output.accept(ModItems.IRON_SWORD_HANDLE.get());
+                        output.accept(ModItems.IRON_PICKAXE_HEAD.get());
+                        output.accept(ModItems.MOLTEN_IRON_PICKAXE_HEAD.get());
+                        output.accept(ModItems.SEMI_MOLTEN_IRON_PICKAXE_HEAD.get());
+
+                        //Carbon steel stuff:
+
+                        output.accept(ModItems.CARBON_STEEL.get());
+                        output.accept(ModItems.MOLTEN_CARBON_STEEL.get());
+                        output.accept(ModItems.COKE.get());
+
+                        //Fuels:
+
                         output.accept(ModItems.BURNING_COAL.get());
 
                     }).build());

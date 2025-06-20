@@ -31,7 +31,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT)).save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BASIC_MOLDING_HAMMER.get())
-                .pattern("III")
+                .pattern(" I ")
                 .pattern(" S ")
                 .pattern(" S ")
                 .define('S', Items.STICK)
@@ -115,5 +115,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.GRAVEL), has(Items.GRAVEL))
                 .unlockedBy(getHasName(ModItems.ORES_POLISHER.get()), has(ModItems.ORES_POLISHER.get())).save(recipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.IRON_SWORD_HANDLE.get(), 1)
+                .requires(Items.IRON_NUGGET)
+                .requires(Items.STICK)
+                .unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_NUGGET))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK)).save(recipeOutput);
     }
 }

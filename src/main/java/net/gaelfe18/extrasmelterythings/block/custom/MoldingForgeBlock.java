@@ -31,20 +31,22 @@ import org.jetbrains.annotations.Nullable;
 public class MoldingForgeBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final MapCodec<MoldingForgeBlock> CODEC = simpleCodec(MoldingForgeBlock::new);
-    public static final VoxelShape SHAPE = MoldingForgeBlock.box(3,0, 1, 13, 11, 15);
+    public static final VoxelShape SHAPE = MoldingForgeBlock.box(3, 0, 1, 13, 11, 15);
+
     public MoldingForgeBlock(Properties pProperties) {
         super(pProperties);
     }
+
     public static final VoxelShape SHAPE_WEST;
     public static final VoxelShape SHAPE_NORTH;
     public static final VoxelShape SHAPE_EAST;
     public static final VoxelShape SHAPE_SOUTH;
 
     static {
-        SHAPE_WEST = MoldingForgeBlock.box(1,0, 3, 15, 11, 13);
-        SHAPE_NORTH = MoldingForgeBlock.box(3,0, 1, 13, 11, 15);
-        SHAPE_EAST = MoldingForgeBlock.box(1,0, 3, 15, 11, 13);
-        SHAPE_SOUTH = MoldingForgeBlock.box(3,0, 1, 13, 11, 15);
+        SHAPE_WEST = MoldingForgeBlock.box(1, 0, 3, 15, 11, 13);
+        SHAPE_NORTH = MoldingForgeBlock.box(3, 0, 1, 13, 11, 15);
+        SHAPE_EAST = MoldingForgeBlock.box(1, 0, 3, 15, 11, 13);
+        SHAPE_SOUTH = MoldingForgeBlock.box(3, 0, 1, 13, 11, 15);
     }
 
     @Override
@@ -97,8 +99,8 @@ public class MoldingForgeBlock extends BaseEntityBlock {
 
     @Override
     protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-        if(state.getBlock() != newState.getBlock()){
-            if(level.getBlockEntity(pos) instanceof MoldingForgeBlockEntity moldingForgeBlockEntity){
+        if (state.getBlock() != newState.getBlock()) {
+            if (level.getBlockEntity(pos) instanceof MoldingForgeBlockEntity moldingForgeBlockEntity) {
                 moldingForgeBlockEntity.drops();
                 level.updateNeighbourForOutputSignal(pos, this);
             }
@@ -109,7 +111,7 @@ public class MoldingForgeBlock extends BaseEntityBlock {
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (level.getBlockEntity(pos) instanceof MoldingForgeBlockEntity moldingForgeBlockEntity) {
-            if (moldingForgeBlockEntity.inventory.getStackInSlot(0).isEmpty() && stack.is(ModTags.Items.MOLTENORES)) {
+            if (moldingForgeBlockEntity.inventory.getStackInSlot(0).isEmpty() && !stack.isEmpty()) {
                 moldingForgeBlockEntity.inventory.insertItem(0, stack.copy(), false);
                 stack.shrink(1);
                 level.playSound(player, pos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.2f, 2.3f);
@@ -119,7 +121,35 @@ public class MoldingForgeBlock extends BaseEntityBlock {
                 moldingForgeBlockEntity.clearContents();
                 level.playSound(player, pos, SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.BLOCKS, 1.2f, 1.5f);
             }
+            else if (stack.getItem() == ModItems.BASIC_MOLDING_HAMMER.get() && !player.getCooldowns().isOnCooldown(stack.getItem())) {
+
+                if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.MOLTEN_IRON.get()) {
+                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get(), 1));
+                    hammerAnimationAndHurt(level, player, pos, stack);
+                }
+
+                else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get()) {
+                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.MOLTEN_IRON_SWORD_EDGE.get(), 1));
+                    hammerAnimationAndHurt(level, player, pos, stack);
+                }
+                if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.MOLTEN_IRON.get()) {
+                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.SEMI_MOLTEN_IRON_PICKAXE_HEAD.get(), 1));
+                    hammerAnimationAndHurt(level, player, pos, stack);
+                }
+
+                else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.SEMI_MOLTEN_IRON_PICKAXE_HEAD.get()) {
+                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.MOLTEN_IRON_PICKAXE_HEAD.get(), 1));
+                    hammerAnimationAndHurt(level, player, pos, stack);
+                }
+            }
         }
         return ItemInteractionResult.SUCCESS;
+    }
+    void hammerAnimationAndHurt(Level level, Player player, BlockPos pos, ItemStack stack){
+        player.getCooldowns().addCooldown(stack.getItem(), 30);
+        level.playSound(player, pos, SoundEvents.ANVIL_USE, SoundSource.BLOCKS, 1.2f, 1.5f);
+        stack.setDamageValue(stack.getDamageValue() + 1);
+        if (stack.getDamageValue() == stack.getMaxDamage())
+            stack.shrink(1);
     }
 }
