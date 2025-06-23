@@ -3,6 +3,7 @@ package net.gaelfe18.extrasmelterythings;
 import net.gaelfe18.extrasmelterythings.block.ModBlocks;
 import net.gaelfe18.extrasmelterythings.block.entity.ModBlockEntities;
 import net.gaelfe18.extrasmelterythings.block.entity.renderer.MoldingForgeBlockEntityRenderer;
+import net.gaelfe18.extrasmelterythings.component.ModDataComponents;
 import net.gaelfe18.extrasmelterythings.item.ModCreativeTabs;
 import net.gaelfe18.extrasmelterythings.item.ModItems;
 import net.gaelfe18.extrasmelterythings.loot.ModLootModifiers;
@@ -61,6 +62,8 @@ public class ExtraSmelteryThings {
         ModRecipes.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
+
+        ModDataComponents.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

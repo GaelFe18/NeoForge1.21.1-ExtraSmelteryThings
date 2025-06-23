@@ -25,26 +25,41 @@ public class ModCreativeTabs {
                         output.accept(ModItems.BASIC_GLOVES.get());
                         output.accept(ModItems.ADVANCED_GLOVES.get());
                         output.accept(ModItems.BASIC_MOLDING_HAMMER.get());
+                        output.accept(ModItems.ADVANCED_MOLDING_HAMMER.get());
                         output.accept(ModItems.ORES_POLISHER.get());
 
                         //Iron stuff:
 
-                        output.accept(ModItems.IRON_MASS.get());
                         output.accept(ModItems.DIRTY_RAW_IRON.get());
-                        output.accept(ModItems.MOLTEN_IRON_SWORD_EDGE.get());
-                        output.accept(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get());
                         output.accept(ModItems.MOLTEN_IRON.get());
-                        output.accept(ModItems.IRON_SWORD_EDGE.get());
-                        output.accept(ModItems.IRON_SWORD_HANDLE.get());
-                        output.accept(ModItems.IRON_PICKAXE_HEAD.get());
-                        output.accept(ModItems.MOLTEN_IRON_PICKAXE_HEAD.get());
+                        output.accept(ModItems.IRON_MASS.get());
+
                         output.accept(ModItems.SEMI_MOLTEN_IRON_PICKAXE_HEAD.get());
+                        output.accept(ModItems.MOLTEN_IRON_PICKAXE_HEAD.get());
+                        output.accept(ModItems.IRON_PICKAXE_HEAD.get());
+
+                        output.accept(ModItems.IRON_SWORD_HANDLE.get());
+                        output.accept(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get());
+                        output.accept(ModItems.MOLTEN_IRON_SWORD_EDGE.get());
+                        output.accept(ModItems.IRON_SWORD_EDGE.get());
+
+                        output.accept(ModItems.SEMI_MOLTEN_IRON_AXE_EDGE.get());
+                        output.accept(ModItems.MOLTEN_IRON_AXE_EDGE.get());
+                        output.accept(ModItems.IRON_AXE_EDGE.get());
+
+                        output.accept(ModItems.SEMI_MOLTEN_IRON_SHOVEL_HEAD.get());
+                        output.accept(ModItems.MOLTEN_IRON_SHOVEL_HEAD.get());
+                        output.accept(ModItems.IRON_SHOVEL_HEAD.get());
+
+                        output.accept(ModItems.SEMI_MOLTEN_IRON_HOE_HEAD.get());
+                        output.accept(ModItems.MOLTEN_IRON_HOE_HEAD.get());
+                        output.accept(ModItems.IRON_HOE_HEAD.get());
 
                         //Carbon steel stuff:
 
-                        output.accept(ModItems.CARBON_STEEL.get());
-                        output.accept(ModItems.MOLTEN_CARBON_STEEL.get());
                         output.accept(ModItems.COKE.get());
+                        output.accept(ModItems.MOLTEN_CARBON_STEEL.get());
+                        output.accept(ModItems.CARBON_STEEL.get());
 
                         //Fuels:
 
@@ -61,10 +76,10 @@ public class ModCreativeTabs {
                         //abajo el input del bloque
                         output.accept(ModBlocks.MOLDING_FORGE_BLOCK.get());
                         output.accept(ModBlocks.BASIC_FOUNDRY_BLOCK.get());
-                        output.accept(ModBlocks.BASIC_TANK_BLOCK.get());
                         output.accept(ModBlocks.BASIC_ALLOYER_BLOCK.get());
                         output.accept(ModBlocks.DIRTY_RAW_IRON_BLOCK.get());
-
+                        output.accept(ModBlocks.CARBON_STEEL_BLOCK.get());
+                        output.accept(ModBlocks.BASIC_TANK_BLOCK.get());
                     }).build());
 
 

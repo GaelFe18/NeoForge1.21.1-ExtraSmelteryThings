@@ -21,6 +21,9 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(ExtraSmelteryThings.MOD_ID);
 
+    public static final DeferredBlock<Block> CARBON_STEEL_BLOCK = registerBlock("carbon_steel_block",
+            () -> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
     public static final DeferredBlock<Block> DIRTY_RAW_IRON_BLOCK = registerBlock("dirty_raw_iron_block",
             () -> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_carbon_steel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extrasmelterythings:carbon_steel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extrasmelterythings:carbon_steel_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_carbon_steel"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extrasmelterythings:carbon_steel_block"
+    ]
+  }
+}

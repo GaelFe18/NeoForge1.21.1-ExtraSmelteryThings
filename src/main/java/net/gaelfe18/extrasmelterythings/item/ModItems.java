@@ -40,15 +40,19 @@ public class ModItems {
             });
 
     public static final DeferredItem<Item> BASIC_MOLDING_HAMMER = ITEMS.register("basic_molding_hammer",
-            () -> new Item(new Item.Properties().durability(6)){
+            () -> new MoldingHammerItem(new Item.Properties().durability(6)){
                 @Override
                 public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
                     pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.basic.tier"));
-                    if(Screen.hasShiftDown()){
-                        pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.molding_hammer.shift_down"));
-                    }
-                    else pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.press_shift"));
+                    super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+                }
+            });
 
+    public static final DeferredItem<Item> ADVANCED_MOLDING_HAMMER = ITEMS.register("advanced_molding_hammer",
+            () -> new MoldingHammerItem(new Item.Properties().durability(30)){
+                @Override
+                public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+                    pTooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.advanced.tier"));
                     super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
                 }
             });
@@ -61,10 +65,28 @@ public class ModItems {
     public static final DeferredItem<Item> DIRTY_RAW_IRON = ITEMS.register("dirty_raw_iron",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> MOLTEN_IRON_HOE_HEAD = ITEMS.register("molten_iron_hoe_head",
+            () -> new CoolableItem(new Item.Properties()));
+
+    public static final DeferredItem<Item> MOLTEN_IRON_SHOVEL_HEAD = ITEMS.register("molten_iron_shovel_head",
+            () -> new CoolableItem(new Item.Properties()));
+
+    public static final DeferredItem<Item> MOLTEN_IRON_AXE_EDGE = ITEMS.register("molten_iron_axe_edge",
+            () -> new CoolableItem(new Item.Properties()));
+
     public static final DeferredItem<Item> MOLTEN_IRON_PICKAXE_HEAD = ITEMS.register("molten_iron_pickaxe_head",
             () -> new CoolableItem(new Item.Properties()));
 
     public static final DeferredItem<Item> MOLTEN_IRON_SWORD_EDGE = ITEMS.register("molten_iron_sword_edge",
+            () -> new CoolableItem(new Item.Properties()));
+
+    public static final DeferredItem<Item> SEMI_MOLTEN_IRON_HOE_HEAD = ITEMS.register("semi_molten_iron_hoe_head",
+            () -> new CoolableItem(new Item.Properties()));
+
+    public static final DeferredItem<Item> SEMI_MOLTEN_IRON_SHOVEL_HEAD = ITEMS.register("semi_molten_iron_shovel_head",
+            () -> new CoolableItem(new Item.Properties()));
+
+    public static final DeferredItem<Item> SEMI_MOLTEN_IRON_AXE_EDGE = ITEMS.register("semi_molten_iron_axe_edge",
             () -> new CoolableItem(new Item.Properties()));
 
     public static final DeferredItem<Item> SEMI_MOLTEN_IRON_PICKAXE_HEAD = ITEMS.register("semi_molten_iron_pickaxe_head",
@@ -73,10 +95,13 @@ public class ModItems {
     public static final DeferredItem<Item> SEMI_MOLTEN_IRON_SWORD_EDGE = ITEMS.register("semi_molten_iron_sword_edge",
             () -> new CoolableItem(new Item.Properties()));
 
-    public static final DeferredItem<Item> MOLTEN_IRON = ITEMS.register("molten_iron",
-            () -> new CoolableItem(new Item.Properties()));
+    public static final DeferredItem<Item> IRON_HOE_HEAD = ITEMS.register("iron_hoe_head",
+            () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> IRON_MASS = ITEMS.register("iron_mass",
+    public static final DeferredItem<Item> IRON_SHOVEL_HEAD = ITEMS.register("iron_shovel_head",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRON_AXE_EDGE = ITEMS.register("iron_axe_edge",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> IRON_PICKAXE_HEAD = ITEMS.register("iron_pickaxe_head",
@@ -86,6 +111,12 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> IRON_SWORD_HANDLE = ITEMS.register("iron_sword_handle",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> MOLTEN_IRON = ITEMS.register("molten_iron",
+            () -> new CoolableItem(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRON_MASS = ITEMS.register("iron_mass",
             () -> new Item(new Item.Properties()));
 
     //Carbon Steel stuff:

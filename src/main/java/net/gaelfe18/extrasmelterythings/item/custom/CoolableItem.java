@@ -81,6 +81,24 @@ public class CoolableItem extends Item{
         if(pContext.getItemInHand().is(ModTags.Items.MOLTENIRON)) {
             return new ItemStack(Items.IRON_INGOT, itemCount); }
 
+        else if(pContext.getItemInHand().is(ModItems.SEMI_MOLTEN_IRON_HOE_HEAD.get())) {
+            return new ItemStack(ModItems.IRON_MASS.get(), itemCount); }
+
+        else if(pContext.getItemInHand().is(ModItems.MOLTEN_IRON_HOE_HEAD.get())) {
+            return new ItemStack(ModItems.IRON_HOE_HEAD.get(), itemCount); }
+
+        else if(pContext.getItemInHand().is(ModItems.SEMI_MOLTEN_IRON_SHOVEL_HEAD.get())) {
+            return new ItemStack(ModItems.IRON_MASS.get(), itemCount); }
+
+        else if(pContext.getItemInHand().is(ModItems.MOLTEN_IRON_SHOVEL_HEAD.get())) {
+            return new ItemStack(ModItems.IRON_SHOVEL_HEAD.get(), itemCount); }
+
+        else if(pContext.getItemInHand().is(ModItems.SEMI_MOLTEN_IRON_AXE_EDGE.get())) {
+            return new ItemStack(ModItems.IRON_MASS.get(), itemCount); }
+
+        else if(pContext.getItemInHand().is(ModItems.MOLTEN_IRON_AXE_EDGE.get())) {
+            return new ItemStack(ModItems.IRON_AXE_EDGE.get(), itemCount); }
+
         else if(pContext.getItemInHand().is(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get())) {
             return new ItemStack(ModItems.IRON_MASS.get(), itemCount); }
 

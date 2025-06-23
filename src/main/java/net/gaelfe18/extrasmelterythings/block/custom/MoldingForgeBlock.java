@@ -1,9 +1,8 @@
 package net.gaelfe18.extrasmelterythings.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.gaelfe18.extrasmelterythings.block.entity.ModBlockEntities;
-import net.gaelfe18.extrasmelterythings.block.entity.custom.BasicAlloyerBlockEntity;
 import net.gaelfe18.extrasmelterythings.block.entity.custom.MoldingForgeBlockEntity;
+import net.gaelfe18.extrasmelterythings.component.ModDataComponents;
 import net.gaelfe18.extrasmelterythings.item.ModItems;
 import net.gaelfe18.extrasmelterythings.util.ModTags;
 import net.minecraft.core.BlockPos;
@@ -18,15 +17,16 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 public class MoldingForgeBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -110,43 +110,68 @@ public class MoldingForgeBlock extends BaseEntityBlock {
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+
         if (level.getBlockEntity(pos) instanceof MoldingForgeBlockEntity moldingForgeBlockEntity) {
-            if (moldingForgeBlockEntity.inventory.getStackInSlot(0).isEmpty() && !stack.isEmpty()) {
+
+            if (moldingForgeBlockEntity.inventory.getStackInSlot(0).isEmpty() && !stack.isEmpty() && stack.getItem() != ModItems.BASIC_MOLDING_HAMMER.get()) {
                 moldingForgeBlockEntity.inventory.insertItem(0, stack.copy(), false);
                 stack.shrink(1);
                 level.playSound(player, pos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.2f, 2.3f);
-            } else if (stack.isEmpty()) {
+            }
+            else if (stack.isEmpty() && !player.isShiftKeyDown() && !moldingForgeBlockEntity.inventory.getStackInSlot(0).isEmpty()) {
                 ItemStack stackOnMoldingForge = moldingForgeBlockEntity.inventory.extractItem(0, 1, false);
                 player.setItemInHand(InteractionHand.MAIN_HAND, stackOnMoldingForge);
                 moldingForgeBlockEntity.clearContents();
                 level.playSound(player, pos, SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.BLOCKS, 1.2f, 1.5f);
-            }
-            else if (stack.getItem() == ModItems.BASIC_MOLDING_HAMMER.get() && !player.getCooldowns().isOnCooldown(stack.getItem())) {
 
-                if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.MOLTEN_IRON.get()) {
+            }
+            else if (!moldingForgeBlockEntity.inventory.getStackInSlot(0).isEmpty() && stack.getItem() == ModItems.BASIC_MOLDING_HAMMER.get() && !player.getCooldowns().isOnCooldown(stack.getItem())) {
+
+                if (moldingForgeBlockEntity.inventory.getStackInSlot(0).is(ModTags.Items.MOLTENIRON) && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Sword")) {
                     moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get(), 1));
                     hammerAnimationAndHurt(level, player, pos, stack);
-                }
-
-                else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get()) {
+                } else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get() && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Sword")) {
                     moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.MOLTEN_IRON_SWORD_EDGE.get(), 1));
                     hammerAnimationAndHurt(level, player, pos, stack);
                 }
-                if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.MOLTEN_IRON.get()) {
+
+                else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).is(ModTags.Items.MOLTENIRON) && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Pickaxe")) {
                     moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.SEMI_MOLTEN_IRON_PICKAXE_HEAD.get(), 1));
+                    hammerAnimationAndHurt(level, player, pos, stack);
+                } else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.SEMI_MOLTEN_IRON_PICKAXE_HEAD.get() && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Pickaxe")) {
+                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.MOLTEN_IRON_PICKAXE_HEAD.get(), 1));
                     hammerAnimationAndHurt(level, player, pos, stack);
                 }
 
-                else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.SEMI_MOLTEN_IRON_PICKAXE_HEAD.get()) {
-                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.MOLTEN_IRON_PICKAXE_HEAD.get(), 1));
+                else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).is(ModTags.Items.MOLTENIRON) && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Axe")) {
+                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.SEMI_MOLTEN_IRON_AXE_EDGE.get(), 1));
+                    hammerAnimationAndHurt(level, player, pos, stack);
+                } else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.SEMI_MOLTEN_IRON_AXE_EDGE.get() && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Axe")) {
+                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.MOLTEN_IRON_AXE_EDGE.get(), 1));
+                    hammerAnimationAndHurt(level, player, pos, stack);
+                }
+
+                else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).is(ModTags.Items.MOLTENIRON) && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Shovel")) {
+                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.SEMI_MOLTEN_IRON_SHOVEL_HEAD.get(), 1));
+                    hammerAnimationAndHurt(level, player, pos, stack);
+                } else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.SEMI_MOLTEN_IRON_SHOVEL_HEAD.get() && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Shovel")) {
+                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.MOLTEN_IRON_SHOVEL_HEAD.get(), 1));
+                    hammerAnimationAndHurt(level, player, pos, stack);
+                }
+                else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).is(ModTags.Items.MOLTENIRON) && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Hoe")) {
+                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.SEMI_MOLTEN_IRON_HOE_HEAD.get(), 1));
+                    hammerAnimationAndHurt(level, player, pos, stack);
+                } else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.SEMI_MOLTEN_IRON_HOE_HEAD.get() && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Hoe")) {
+                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.MOLTEN_IRON_HOE_HEAD.get(), 1));
                     hammerAnimationAndHurt(level, player, pos, stack);
                 }
             }
         }
         return ItemInteractionResult.SUCCESS;
     }
+
     void hammerAnimationAndHurt(Level level, Player player, BlockPos pos, ItemStack stack){
-        player.getCooldowns().addCooldown(stack.getItem(), 30);
+        player.getCooldowns().addCooldown(stack.getItem(), 35);
         level.playSound(player, pos, SoundEvents.ANVIL_USE, SoundSource.BLOCKS, 1.2f, 1.5f);
         stack.setDamageValue(stack.getDamageValue() + 1);
         if (stack.getDamageValue() == stack.getMaxDamage())

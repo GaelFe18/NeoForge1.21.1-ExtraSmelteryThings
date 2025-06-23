@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "extrasmelterythings:iron_shovel_head"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "  P",
+    " S ",
+    "S  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_shovel"
+  }
+}

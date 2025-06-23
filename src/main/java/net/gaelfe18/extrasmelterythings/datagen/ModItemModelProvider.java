@@ -23,11 +23,25 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.DIRTY_RAW_IRON.get());
         basicItem(ModItems.MOLTEN_IRON.get());
-        basicItem(ModItems.MOLTEN_IRON_SWORD_EDGE.get());
-        basicItem(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get());
-        basicItem(ModItems.IRON_SWORD_HANDLE.get());
-        basicItem(ModItems.IRON_SWORD_EDGE.get());
         basicItem(ModItems.IRON_MASS.get());
+
+        basicItem(ModItems.SEMI_MOLTEN_IRON_HOE_HEAD.get());
+        basicItem(ModItems.MOLTEN_IRON_HOE_HEAD.get());
+        basicItem(ModItems.IRON_HOE_HEAD.get());
+
+        basicItem(ModItems.SEMI_MOLTEN_IRON_SHOVEL_HEAD.get());
+        basicItem(ModItems.MOLTEN_IRON_SHOVEL_HEAD.get());
+        basicItem(ModItems.IRON_SHOVEL_HEAD.get());
+
+        basicItem(ModItems.SEMI_MOLTEN_IRON_AXE_EDGE.get());
+        basicItem(ModItems.MOLTEN_IRON_AXE_EDGE.get());
+        basicItem(ModItems.IRON_AXE_EDGE.get());
+
+        basicItem(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get());
+        basicItem(ModItems.MOLTEN_IRON_SWORD_EDGE.get());
+        basicItem(ModItems.IRON_SWORD_EDGE.get());
+        basicItem(ModItems.IRON_SWORD_HANDLE.get());
+
         basicItem(ModItems.SEMI_MOLTEN_IRON_PICKAXE_HEAD.get());
         basicItem(ModItems.MOLTEN_IRON_PICKAXE_HEAD.get());
         basicItem(ModItems.IRON_PICKAXE_HEAD.get());

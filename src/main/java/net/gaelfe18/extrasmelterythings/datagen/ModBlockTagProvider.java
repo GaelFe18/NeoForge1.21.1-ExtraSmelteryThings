@@ -23,7 +23,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.BASIC_ALLOYER_BLOCK.get());
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.BASIC_FOUNDRY_BLOCK.get())
-                .add(ModBlocks.BASIC_ALLOYER_BLOCK.get());
+                .add(ModBlocks.BASIC_ALLOYER_BLOCK.get())
+                .add(ModBlocks.CARBON_STEEL_BLOCK.get());
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.DIRTY_RAW_IRON_BLOCK.get());
     }

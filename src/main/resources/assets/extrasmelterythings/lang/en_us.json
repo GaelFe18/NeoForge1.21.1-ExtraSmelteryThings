@@ -1,24 +1,45 @@
 {
   "item.extrasmelterythings.basic_gloves": "Basic Gloves",
   "item.extrasmelterythings.advanced_gloves": "Advanced Gloves",
-  "item.extrasmelterythings.molding_hammer":"Molding Hammer",
+
   "item.extrasmelterythings.basic_molding_hammer": "Basic Molding Hammer",
+  "item.extrasmelterythings.advanced_molding_hammer": "Advanced Molding Hammer",
+
   "item.extrasmelterythings.ores_polisher": "Ores Polisher",
+
   "item.extrasmelterythings.dirty_raw_iron": "Dirty Raw Iron",
-  "item.extrasmelterythings.burning_coal": "Burning Coal",
   "item.extrasmelterythings.molten_iron": "Molten Iron",
+  "item.extrasmelterythings.iron_mass": "Iron Mass",
+
+  "item.extrasmelterythings.semi_molten_iron_hoe_head": "Semi Molten Iron Hoe Head",
+  "item.extrasmelterythings.molten_iron_hoe_head": "Molten Iron Hoe Head",
+  "item.extrasmelterythings.iron_hoe_head": "Iron Hoe Head",
+
+  "item.extrasmelterythings.semi_molten_iron_shovel_head": "Semi Molten Iron Shovel Head",
+  "item.extrasmelterythings.molten_iron_shovel_head": "Molten Iron Shovel Head",
+  "item.extrasmelterythings.iron_shovel_head": "Iron Shovel Head",
+
+  "item.extrasmelterythings.semi_molten_iron_axe_edge": "Semi Molten Iron Axe Edge",
+  "item.extrasmelterythings.molten_iron_axe_edge": "Molten Iron Axe Edge",
+  "item.extrasmelterythings.iron_axe_edge": "Iron Axe Edge",
+
   "item.extrasmelterythings.semi_molten_iron_sword_edge": "Semi Molten Iron Sword Edge",
   "item.extrasmelterythings.molten_iron_sword_edge": "Molten Iron Sword Edge",
-  "item.extrasmelterythings.iron_mass": "Iron Mass",
   "item.extrasmelterythings.iron_sword_edge": "Iron Sword Edge",
   "item.extrasmelterythings.iron_sword_handle": "Iron Sword Handle",
-  "item.extrasmelterythings.iron_pickaxe_head": "Iron Pickaxe Head",
-  "item.extrasmelterythings.molten_iron_pickaxe_head": "Molten Iron Pickaxe Head",
-  "item.extrasmelterythings.semi_molten_iron_pickaxe_head": "Semi Molten Iron Pickaxe Head",
-  "item.extrasmelterythings.coke": "Coke",
-  "item.extrasmelterythings.carbon_steel": "Carbon Steel",
-  "item.extrasmelterythings.molten_carbon_steel": "Molten Carbon Steel",
 
+  "item.extrasmelterythings.semi_molten_iron_pickaxe_head": "Semi Molten Iron Pickaxe Head",
+  "item.extrasmelterythings.molten_iron_pickaxe_head": "Molten Iron Pickaxe Head",
+  "item.extrasmelterythings.iron_pickaxe_head": "Iron Pickaxe Head",
+
+  "item.extrasmelterythings.coke": "Coke",
+  "item.extrasmelterythings.molten_carbon_steel": "Molten Carbon Steel",
+  "item.extrasmelterythings.carbon_steel": "Carbon Steel",
+
+
+  "item.extrasmelterythings.burning_coal": "Burning Coal",
+
+  "block.extrasmelterythings.carbon_steel_block": "Carbon Steel Block",
   "block.extrasmelterythings.dirty_raw_iron_block": "Dirty Raw Iron Block",
   "block.extrasmelterythings.molding_forge_block": "Molding Forge",
   "block.extrasmelterythings.basic_foundry_block": "Basic Foundry",
@@ -31,7 +52,13 @@
   "tooltip.extrasmelterythings.advanced.tier": "§6Tier:§r §9§oAdvanced",
   "tooltip.extrasmelterythings.industrial.tier": "§6Tier:§r §d§oIndustrial",
 
-  "tooltip.extrasmelterythings.molding_hammer.shift_down":"This hammer is used to mold molten ores into shapes",
+  "tooltip.extrasmelterythings.molding_hammer.mode_pickaxe":"§9Mode:§r §6Pickaxe",
+  "tooltip.extrasmelterythings.molding_hammer.mode_sword":"§9Mode:§r §6Sword",
+  "tooltip.extrasmelterythings.molding_hammer.mode_axe":"§9Mode:§r §6Axe",
+  "tooltip.extrasmelterythings.molding_hammer.mode_shovel":"§9Mode:§r §6Shovel",
+  "tooltip.extrasmelterythings.molding_hammer.mode_hoe":"§9Mode:§r §6Hoe",
+  "tooltip.extrasmelterythings.molding_hammer.shift_down":"This hammer is used to mold molten ores into shapes. If you right click any block it will change its mode",
+
   "tooltip.extrasmelterythings.coolable_item.shift_down":"This item can be cooled down by right clicking a cauldron. §cDon't grab it with your bare hands",
 
   "tooltip.extrasmelterythings.gloves.shift_down": "This gloves protects you from getting burnt from molten ores",

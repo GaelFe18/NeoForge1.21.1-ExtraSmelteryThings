@@ -3,6 +3,7 @@
 # The overall format is standard TOML format, v0.5.0.
 # Note that there are a couple of TOML lists in this file.
 # Find more information on toml format here:  https://github.com/toml-lang/toml
+
 # The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
 modLoader="javafml" #mandatory
 
@@ -58,21 +59,33 @@ description='''${mod_description}'''
 # The coremods config file path is not configurable and is always loaded from META-INF/coremods.json
 
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-
-
-[[dependencies.artifacts]]
-modId="neoforge"
-type="required"
-versionRange = "[21.1.0,)"
+[[dependencies.extrasmelterythings]] #optional
+# the modid of the dependency
+modId="neoforge" #mandatory
+# The type of the dependency. Can be one of "required", "optional", "incompatible" or "discouraged" (case insensitive).
+# 'required' requires the mod to exist, 'optional' does not
+# 'incompatible' will prevent the game from loading when the mod exists, and 'discouraged' will show a warning
+type="required" #mandatory
+# Optional field describing why the dependency is required or why it is incompatible
+# reason="..."
+# The version range of the dependency
+versionRange="21.1.0," #mandatory
+# An ordering relationship for the dependency.
+# BEFORE - This mod is loaded BEFORE the dependency
+# AFTER - This mod is loaded AFTER the dependency
 ordering="AFTER"
+# Side this dependency is applied on - BOTH, CLIENT, or SERVER
 side="BOTH"
 
-[[dependencies.artifacts]]
-modId = "minecraft"
+# Here's another dependency
+[[dependencies.extrasmelterythings]]
+modId="minecraft"
 type="required"
-versionRange = "1.21.1"
-ordering = "NONE"
-side = "BOTH"
+# This version range declares a minimum of the current minecraft version up to but not including the next major version
+versionRange="1.21.1"
+ordering="NONE"
+side="BOTH"
+
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't
 # stop your mod loading on the server for example.

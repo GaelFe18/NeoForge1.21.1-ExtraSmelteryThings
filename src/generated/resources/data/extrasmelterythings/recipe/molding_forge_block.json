@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:iron_block"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "   ",
+    " B ",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extrasmelterythings:molding_forge_block"
+  }
+}

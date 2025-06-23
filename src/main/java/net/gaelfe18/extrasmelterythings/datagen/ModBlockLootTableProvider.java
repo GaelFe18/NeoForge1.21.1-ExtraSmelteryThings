@@ -22,6 +22,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.BASIC_FOUNDRY_BLOCK.get());
         this.dropSelf(ModBlocks.BASIC_TANK_BLOCK.get());
         this.dropSelf(ModBlocks.DIRTY_RAW_IRON_BLOCK.get());
+        this.dropSelf(ModBlocks.CARBON_STEEL_BLOCK.get());
     }
 
     @Override

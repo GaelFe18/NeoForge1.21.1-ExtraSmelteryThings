@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-08T17:24:25.7316277	Tags for minecraft:block mod id extrasmelterythings
+// 1.21.1	2025-06-23T17:33:50.590377	Tags for minecraft:block mod id extrasmelterythings
 ef9b72b882ec916827a95e1ec6e7c4050df57218 data/minecraft/tags/block/mineable/pickaxe.json
-ef9b72b882ec916827a95e1ec6e7c4050df57218 data/minecraft/tags/block/needs_iron_tool.json
+fe00287993ae81e33d4fa99c3380f970d180ebc7 data/minecraft/tags/block/needs_iron_tool.json
 ef732fc435a881f6f2fc6a222fbd490da7acaa21 data/minecraft/tags/block/needs_stone_tool.json

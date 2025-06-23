@@ -19,6 +19,31 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ADVANCED_MOLDING_HAMMER.get())
+                .pattern(" C ")
+                .pattern(" S ")
+                .pattern(" S ")
+                .define('C', ModBlocks.CARBON_STEEL_BLOCK.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .unlockedBy(getHasName(ModBlocks.CARBON_STEEL_BLOCK.get()), has(ModBlocks.CARBON_STEEL_BLOCK.get())).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CARBON_STEEL_BLOCK.get())
+                .pattern("CCC")
+                .pattern("CCC")
+                .pattern("CCC")
+                .define('C', ModItems.CARBON_STEEL.get())
+                .unlockedBy(getHasName(ModItems.CARBON_STEEL.get()), has(ModItems.CARBON_STEEL.get())).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MOLDING_FORGE_BLOCK.get())
+                .pattern("   ")
+                .pattern(" B ")
+                .pattern("III")
+                .define('B', Items.IRON_BLOCK)
+                .define('I', Items.IRON_INGOT)
+                .unlockedBy(getHasName(Items.IRON_BLOCK), has(Items.IRON_BLOCK))
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT)).save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ORES_POLISHER.get())
                 .pattern("  F")
                 .pattern(" I ")
