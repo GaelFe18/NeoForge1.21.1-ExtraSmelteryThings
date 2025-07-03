@@ -126,8 +126,15 @@ public class MoldingForgeBlock extends BaseEntityBlock {
 
             }
             else if (!moldingForgeBlockEntity.inventory.getStackInSlot(0).isEmpty() && stack.getItem() == ModItems.BASIC_MOLDING_HAMMER.get() && !player.getCooldowns().isOnCooldown(stack.getItem())) {
+                if (moldingForgeBlockEntity.inventory.getStackInSlot(0).is(ModTags.Items.MOLTENIRON) && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Armor")) {
+                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.SEMI_MOLTEN_IRON_ARMOR_PARTS.get(), 1));
+                    hammerAnimationAndHurt(level, player, pos, stack);
+                }else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.SEMI_MOLTEN_IRON_ARMOR_PARTS.get() && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Armor")) {
+                    moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.MOLTEN_IRON_ARMOR_PARTS.get(), 1));
+                    hammerAnimationAndHurt(level, player, pos, stack);
+                }
 
-                if (moldingForgeBlockEntity.inventory.getStackInSlot(0).is(ModTags.Items.MOLTENIRON) && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Sword")) {
+                else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).is(ModTags.Items.MOLTENIRON) && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Sword")) {
                     moldingForgeBlockEntity.inventory.setStackInSlot(0, new ItemStack(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get(), 1));
                     hammerAnimationAndHurt(level, player, pos, stack);
                 } else if (moldingForgeBlockEntity.inventory.getStackInSlot(0).getItem() == ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get() && Objects.equals(stack.get(ModDataComponents.MOLDING_TYPE), "Sword")) {

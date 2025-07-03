@@ -21,6 +21,24 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+        tag(ModTags.Items.IRONLIKE)
+                .add(Items.IRON_INGOT)
+                .add(Items.IRON_AXE)
+                .add(Items.IRON_PICKAXE)
+                .add(Items.IRON_SHOVEL)
+                .add(Items.IRON_SWORD)
+                .add(Items.IRON_HOE)
+                .add(Items.IRON_BOOTS)
+                .add(Items.IRON_LEGGINGS)
+                .add(Items.IRON_CHESTPLATE)
+                .add(Items.IRON_HELMET)
+                .add(ModItems.IRON_ARMOR_PARTS.get())
+                .add(ModItems.IRON_AXE_EDGE.get())
+                .add(ModItems.IRON_PICKAXE_HEAD.get())
+                .add(ModItems.IRON_SHOVEL_HEAD.get())
+                .add(ModItems.IRON_SWORD_EDGE.get())
+                .add(ModItems.IRON_HOE_HEAD.get())
+                .add(ModItems.IRON_MASS.get());
         tag(ModTags.Items.MOLTENCARBONSTEEL)
                 .add(ModItems.MOLTEN_CARBON_STEEL.get());
         tag(ModTags.Items.MOLTENIRON)

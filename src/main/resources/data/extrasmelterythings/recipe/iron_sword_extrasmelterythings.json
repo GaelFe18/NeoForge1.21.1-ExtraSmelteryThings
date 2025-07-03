@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "I": {
-      "item": "extrasmelterythings:iron_sword_edge"
+      "item": "extrasmelterythings:molten_iron_sword_edge"
     },
     "S": {
       "item": "extrasmelterythings:iron_sword_handle"
@@ -16,6 +16,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:iron_sword"
+    "id": "extrasmelterythings:molten_iron_sword"
   }
 }

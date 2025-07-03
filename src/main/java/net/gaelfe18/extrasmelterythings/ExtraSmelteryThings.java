@@ -9,11 +9,18 @@ import net.gaelfe18.extrasmelterythings.item.ModItems;
 import net.gaelfe18.extrasmelterythings.loot.ModLootModifiers;
 import net.gaelfe18.extrasmelterythings.recipe.ModRecipes;
 import net.gaelfe18.extrasmelterythings.screen.ModMenuTypes;
+import net.gaelfe18.extrasmelterythings.screen.custom.AdvancedAlloyerBlockScreen;
 import net.gaelfe18.extrasmelterythings.screen.custom.BasicAlloyerBlockScreen;
 import net.gaelfe18.extrasmelterythings.screen.custom.BasicFoundryBlockScreen;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.neoforged.bus.api.Event;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -30,6 +37,8 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
+
+import java.util.List;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(ExtraSmelteryThings.MOD_ID)
@@ -49,6 +58,7 @@ public class ExtraSmelteryThings {
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.addListener(this::ModifyItemTooltip);
 
         ModCreativeTabs.register(modEventBus);
 
@@ -72,6 +82,21 @@ public class ExtraSmelteryThings {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
+    public void ModifyItemTooltip(ItemTooltipEvent event) {
+        List<Component> tooltipComponents = event.getToolTip();
+        ItemStack stack= event.getItemStack();
+
+        String getStackQuality = stack.get(ModDataComponents.QUALITY);
+        if (getStackQuality != null) {
+            switch (getStackQuality) {
+                case "Mid Forged" -> tooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.quality_mid_forged"));
+                case "Basic" -> tooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.quality_basic"));
+                case "Well Forged" -> tooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.quality_well_forged"));
+                case "Legendary" -> tooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.quality_legendary"));
+                default -> tooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.quality_bad_forged"));
+            }
+        }
+    }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 
@@ -79,7 +104,6 @@ public class ExtraSmelteryThings {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -94,7 +118,8 @@ public class ExtraSmelteryThings {
         @SubscribeEvent
         public static void onClientSetup(RegisterMenuScreensEvent event) {
             event.register(ModMenuTypes.BASIC_FOUNDRY_BLOCK_MENU.get(), BasicFoundryBlockScreen::new);
-            event.register(ModMenuTypes.BASIC_ALLOYER_BLOCK_MENU.get(), BasicAlloyerBlockScreen::new);
+            event.register(ModMenuTypes.BASIC_ALLOYER_BLOCK_MENU.get(), BasicAlloyerBlockScreen::new);;
+            event.register(ModMenuTypes.ADVANCED_ALLOYER_BLOCK_MENU.get(), AdvancedAlloyerBlockScreen::new);
         }
 
         @SubscribeEvent

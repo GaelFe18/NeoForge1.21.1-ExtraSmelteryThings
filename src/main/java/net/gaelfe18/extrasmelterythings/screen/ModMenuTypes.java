@@ -1,6 +1,7 @@
 package net.gaelfe18.extrasmelterythings.screen;
 
 import net.gaelfe18.extrasmelterythings.ExtraSmelteryThings;
+import net.gaelfe18.extrasmelterythings.screen.custom.AdvancedAlloyerBlockMenu;
 import net.gaelfe18.extrasmelterythings.screen.custom.BasicAlloyerBlockMenu;
 import net.gaelfe18.extrasmelterythings.screen.custom.BasicFoundryBlockMenu;
 import net.minecraft.core.registries.Registries;
@@ -21,6 +22,9 @@ public class ModMenuTypes {
 
     public static final DeferredHolder<MenuType<?>, MenuType<BasicAlloyerBlockMenu>> BASIC_ALLOYER_BLOCK_MENU =
             registerMenuType("basic_alloyer_block_menu", BasicAlloyerBlockMenu::new);
+
+    public static final DeferredHolder<MenuType<?>, MenuType<AdvancedAlloyerBlockMenu>> ADVANCED_ALLOYER_BLOCK_MENU =
+            registerMenuType("advanced_alloyer_block_menu", AdvancedAlloyerBlockMenu::new);
 
     private static <T extends AbstractContainerMenu>DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IMenuTypeExtension.create(factory));

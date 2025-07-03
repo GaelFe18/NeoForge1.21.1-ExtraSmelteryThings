@@ -80,13 +80,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('D', ModItems.DIRTY_RAW_IRON.get())
                 .unlockedBy(getHasName(ModItems.DIRTY_RAW_IRON.get()), has(ModItems.DIRTY_RAW_IRON.get())).save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ADVANCED_ALLOYER_BLOCK.get())
+                .pattern("SCS")
+                .pattern("SAS")
+                .pattern("CCC")
+                .define('S', Items.STONE_BRICKS)
+                .define('C', ModBlocks.CARBON_STEEL_BLOCK.asItem())
+                .define('A', ModBlocks.BASIC_ALLOYER_BLOCK.asItem())
+                .unlockedBy(getHasName(Items.STONE_BRICKS), has(Items.STONE_BRICKS))
+                .unlockedBy(getHasName(ModBlocks.CARBON_STEEL_BLOCK.asItem()), has(ModBlocks.CARBON_STEEL_BLOCK.asItem()))
+                .unlockedBy(getHasName(ModBlocks.BASIC_ALLOYER_BLOCK.asItem()), has(ModBlocks.BASIC_ALLOYER_BLOCK.asItem())).save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BASIC_ALLOYER_BLOCK.get())
-                .pattern("SDS")
+                .pattern("SIS")
                 .pattern("SFS")
                 .pattern("III")
                 .define('S', Items.STONE_BRICKS)
                 .define('I', Items.IRON_BLOCK)
-                .define('D', Items.DROPPER)
                 .define('F', Items.BLAST_FURNACE)
                 .unlockedBy(getHasName(Items.STONE_BRICKS), has(Items.STONE_BRICKS))
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
@@ -145,5 +155,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Items.STICK)
                 .unlockedBy(getHasName(Items.IRON_NUGGET), has(Items.IRON_NUGGET))
                 .unlockedBy(getHasName(Items.STICK), has(Items.STICK)).save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PLATINUM.get(), 1)
+                .requires(ModItems.PLATINUM_NUGGET.get(), 3)
+                .unlockedBy(getHasName(ModItems.PLATINUM_NUGGET.get()), has(ModItems.PLATINUM_NUGGET.get())).save(recipeOutput);
     }
 }

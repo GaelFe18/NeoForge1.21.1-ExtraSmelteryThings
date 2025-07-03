@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "P": {
-      "item": "extrasmelterythings:iron_axe_edge"
+      "item": "extrasmelterythings:molten_iron_axe_edge"
     },
     "S": {
       "item": "minecraft:stick"
@@ -16,6 +16,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:iron_axe"
+    "id": "extrasmelterythings:molten_iron_axe"
   }
 }

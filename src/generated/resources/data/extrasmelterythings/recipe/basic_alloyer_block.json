@@ -2,9 +2,6 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "D": {
-      "item": "minecraft:dropper"
-    },
     "F": {
       "item": "minecraft:blast_furnace"
     },
@@ -16,7 +13,7 @@
     }
   },
   "pattern": [
-    "SDS",
+    "SIS",
     "SFS",
     "III"
   ],

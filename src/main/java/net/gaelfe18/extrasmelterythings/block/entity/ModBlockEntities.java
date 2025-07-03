@@ -2,10 +2,7 @@ package net.gaelfe18.extrasmelterythings.block.entity;
 
 import net.gaelfe18.extrasmelterythings.ExtraSmelteryThings;
 import net.gaelfe18.extrasmelterythings.block.ModBlocks;
-import net.gaelfe18.extrasmelterythings.block.entity.custom.BasicAlloyerBlockEntity;
-import net.gaelfe18.extrasmelterythings.block.entity.custom.BasicFoundryBlockEntity;
-import net.gaelfe18.extrasmelterythings.block.entity.custom.BasicTankBlockEntity;
-import net.gaelfe18.extrasmelterythings.block.entity.custom.MoldingForgeBlockEntity;
+import net.gaelfe18.extrasmelterythings.block.entity.custom.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
@@ -32,6 +29,10 @@ public class ModBlockEntities {
     public static final Supplier<BlockEntityType<BasicAlloyerBlockEntity>> BASIC_ALLOYER_BLOCK_BE =
             BLOCK_ENTITIES.register("basic_alloyer_block_be", () -> BlockEntityType.Builder.of(
                     BasicAlloyerBlockEntity::new, ModBlocks.BASIC_ALLOYER_BLOCK.get()).build(null));
+
+    public static final Supplier<BlockEntityType<AdvancedAlloyerBlockEntity>> ADVANCED_ALLOYER_BLOCK_BE =
+            BLOCK_ENTITIES.register("advanced_alloyer_block_be", () -> BlockEntityType.Builder.of(
+                    AdvancedAlloyerBlockEntity::new, ModBlocks.ADVANCED_ALLOYER_BLOCK.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

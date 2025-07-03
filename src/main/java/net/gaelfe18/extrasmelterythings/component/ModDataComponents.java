@@ -16,7 +16,8 @@ public class ModDataComponents {
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<String>> MOLDING_TYPE = register("molding_type",
             stringBuilder -> stringBuilder.persistent(Codec.STRING));
 
-
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<String>> QUALITY = register("quality",
+            stringBuilder -> stringBuilder.persistent(Codec.STRING));
 
     private static <T>DeferredHolder<DataComponentType<?>, DataComponentType<T>> register(String name, UnaryOperator<DataComponentType.Builder<T>> builderUnaryOperator){
         return DATA_COMPONENT_TYPES.register(name, () -> builderUnaryOperator.apply(DataComponentType.builder()).build());

@@ -1,10 +1,7 @@
 package net.gaelfe18.extrasmelterythings.block;
 
 import net.gaelfe18.extrasmelterythings.ExtraSmelteryThings;
-import net.gaelfe18.extrasmelterythings.block.custom.BasicAlloyerBlock;
-import net.gaelfe18.extrasmelterythings.block.custom.BasicFoundryBlock;
-import net.gaelfe18.extrasmelterythings.block.custom.BasicTankBlock;
-import net.gaelfe18.extrasmelterythings.block.custom.MoldingForgeBlock;
+import net.gaelfe18.extrasmelterythings.block.custom.*;
 import net.gaelfe18.extrasmelterythings.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -20,6 +17,9 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(ExtraSmelteryThings.MOD_ID);
+
+    public static final DeferredBlock<Block> MOLTEN_GLASS_BLOCK = registerBlock("molten_glass_block",
+            () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.GLASS)));
 
     public static final DeferredBlock<Block> CARBON_STEEL_BLOCK = registerBlock("carbon_steel_block",
             () -> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
@@ -38,6 +38,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> BASIC_ALLOYER_BLOCK = registerBlock("basic_alloyer_block",
             () -> new BasicAlloyerBlock(BlockBehaviour.Properties.of().noOcclusion()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
+    public static final DeferredBlock<Block> ADVANCED_ALLOYER_BLOCK = registerBlock("advanced_alloyer_block",
+            () -> new AdvancedAlloyerBlock(BlockBehaviour.Properties.of().noOcclusion()
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK)));
 
     public static final DeferredBlock<Block> BASIC_TANK_BLOCK = registerBlock("basic_tank_block",
             () -> new BasicTankBlock(BlockBehaviour.Properties.of().noOcclusion()));

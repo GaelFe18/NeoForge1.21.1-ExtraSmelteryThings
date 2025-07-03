@@ -20,6 +20,10 @@ public class ModCreativeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.MOLTEN_IRON.get()))
                     .title(Component.translatable("creativetab.extrasmelterythings.extrasmelterythings_items"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        //No category:
+
+                        output.accept(ModItems.PLATINUM.get());
+                        output.accept(ModItems.PLATINUM_NUGGET.get());
 
                         //Tools:
                         output.accept(ModItems.BASIC_GLOVES.get());
@@ -34,25 +38,39 @@ public class ModCreativeTabs {
                         output.accept(ModItems.MOLTEN_IRON.get());
                         output.accept(ModItems.IRON_MASS.get());
 
+                        output.accept(ModItems.SEMI_MOLTEN_IRON_ARMOR_PARTS.get());
+                        output.accept(ModItems.MOLTEN_IRON_ARMOR_PARTS.get());
+                        output.accept(ModItems.IRON_ARMOR_PARTS.get());
+
+                        output.accept(ModItems.MOLTEN_IRON_BOOTS.get());
+                        output.accept(ModItems.MOLTEN_IRON_LEGGINGS.get());
+                        output.accept(ModItems.MOLTEN_IRON_CHESTPLATE.get());
+                        output.accept(ModItems.MOLTEN_IRON_HELMET.get());
+
                         output.accept(ModItems.SEMI_MOLTEN_IRON_PICKAXE_HEAD.get());
                         output.accept(ModItems.MOLTEN_IRON_PICKAXE_HEAD.get());
+                        output.accept(ModItems.MOLTEN_IRON_PICKAXE.get());
                         output.accept(ModItems.IRON_PICKAXE_HEAD.get());
 
                         output.accept(ModItems.IRON_SWORD_HANDLE.get());
                         output.accept(ModItems.SEMI_MOLTEN_IRON_SWORD_EDGE.get());
                         output.accept(ModItems.MOLTEN_IRON_SWORD_EDGE.get());
+                        output.accept(ModItems.MOLTEN_IRON_SWORD.get());
                         output.accept(ModItems.IRON_SWORD_EDGE.get());
 
                         output.accept(ModItems.SEMI_MOLTEN_IRON_AXE_EDGE.get());
                         output.accept(ModItems.MOLTEN_IRON_AXE_EDGE.get());
+                        output.accept(ModItems.MOLTEN_IRON_AXE.get());
                         output.accept(ModItems.IRON_AXE_EDGE.get());
 
                         output.accept(ModItems.SEMI_MOLTEN_IRON_SHOVEL_HEAD.get());
                         output.accept(ModItems.MOLTEN_IRON_SHOVEL_HEAD.get());
+                        output.accept(ModItems.MOLTEN_IRON_SHOVEL.get());
                         output.accept(ModItems.IRON_SHOVEL_HEAD.get());
 
                         output.accept(ModItems.SEMI_MOLTEN_IRON_HOE_HEAD.get());
                         output.accept(ModItems.MOLTEN_IRON_HOE_HEAD.get());
+                        output.accept(ModItems.MOLTEN_IRON_HOE.get());
                         output.accept(ModItems.IRON_HOE_HEAD.get());
 
                         //Carbon steel stuff:
@@ -77,6 +95,7 @@ public class ModCreativeTabs {
                         output.accept(ModBlocks.MOLDING_FORGE_BLOCK.get());
                         output.accept(ModBlocks.BASIC_FOUNDRY_BLOCK.get());
                         output.accept(ModBlocks.BASIC_ALLOYER_BLOCK.get());
+                        output.accept(ModBlocks.ADVANCED_ALLOYER_BLOCK.get());
                         output.accept(ModBlocks.DIRTY_RAW_IRON_BLOCK.get());
                         output.accept(ModBlocks.CARBON_STEEL_BLOCK.get());
                         output.accept(ModBlocks.BASIC_TANK_BLOCK.get());

@@ -1,5 +1,6 @@
-// 1.21.1	2025-06-17T20:59:10.5253772	Tags for minecraft:item mod id extrasmelterythings
+// 1.21.1	2025-07-03T15:20:18.5274011	Tags for minecraft:item mod id extrasmelterythings
 cdc7bd5c1305a719fed30ea657011d691199589b data/extrasmelterythings/tags/item/high_fuels.json
+020a587c3ea18d799e3611cdd58525a765d65499 data/extrasmelterythings/tags/item/iron_like.json
 50e13739c5004ff1f5177fb29ecff7b5d3d45cd3 data/extrasmelterythings/tags/item/low_fuels.json
 c10b2d2b402581ca8fbaed3aaa0be88642a828a8 data/extrasmelterythings/tags/item/mid_fuels.json
 5e2b77f0b8802441b04181e1b0a2a3c50f3e23a9 data/extrasmelterythings/tags/item/molten_carbon_steel.json

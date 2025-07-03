@@ -9,7 +9,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -29,6 +28,7 @@ public class MoldingHammerItem extends Item {
             case "Sword" -> itemStackInHand.set(ModDataComponents.MOLDING_TYPE, "Axe");
             case "Axe" -> itemStackInHand.set(ModDataComponents.MOLDING_TYPE, "Shovel");
             case "Shovel" -> itemStackInHand.set(ModDataComponents.MOLDING_TYPE, "Hoe");
+            case "Hoe" -> itemStackInHand.set(ModDataComponents.MOLDING_TYPE, "Armor");
             case null, default -> itemStackInHand.set(ModDataComponents.MOLDING_TYPE, "Pickaxe");
         }
 
@@ -44,6 +44,7 @@ public class MoldingHammerItem extends Item {
             case "Axe" -> tooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.molding_hammer.mode_axe"));
             case "Shovel" -> tooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.molding_hammer.mode_shovel"));
             case "Hoe" -> tooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.molding_hammer.mode_hoe"));
+            case "Armor" -> tooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.molding_hammer.mode_armor"));
             case null, default -> tooltipComponents.add(Component.translatable("tooltip.extrasmelterythings.molding_hammer.mode_pickaxe"));
         }
     }

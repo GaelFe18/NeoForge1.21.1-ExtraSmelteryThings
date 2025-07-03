@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "extrasmelterythings:block/advanced_alloyer_block_top",
+    "up": "extrasmelterythings:block/advanced_alloyer_block_top",
+    "north": "extrasmelterythings:block/advanced_alloyer_block_front",
+    "east": "extrasmelterythings:block/advanced_alloyer_block_side",
+    "south": "extrasmelterythings:block/advanced_alloyer_block_side",
+    "west": "extrasmelterythings:block/advanced_alloyer_block_side",
+    "particle": "extrasmelterythings:block/advanced_alloyer_block_front"
+  },
+  "render_type": "solid"
+}
