@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_basic_alloyer_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extrasmelterythings:basic_alloyer_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_carbon_steel_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extrasmelterythings:carbon_steel_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_stone_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:stone_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extrasmelterythings:advanced_alloyer_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stone_bricks",
+      "has_carbon_steel_block",
+      "has_basic_alloyer_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extrasmelterythings:advanced_alloyer_block"
+    ]
+  }
+}

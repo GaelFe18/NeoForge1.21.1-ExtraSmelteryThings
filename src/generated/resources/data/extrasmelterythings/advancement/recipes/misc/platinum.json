@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_platinum_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": "extrasmelterythings:platinum_nugget"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extrasmelterythings:platinum"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_platinum_nugget"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extrasmelterythings:platinum"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "values": [
+    "minecraft:iron_ingot",
+    "minecraft:iron_axe",
+    "minecraft:iron_pickaxe",
+    "minecraft:iron_shovel",
+    "minecraft:iron_sword",
+    "minecraft:iron_hoe",
+    "minecraft:iron_boots",
+    "minecraft:iron_leggings",
+    "minecraft:iron_chestplate",
+    "minecraft:iron_helmet",
+    "extrasmelterythings:iron_armor_parts",
+    "extrasmelterythings:iron_axe_edge",
+    "extrasmelterythings:iron_pickaxe_head",
+    "extrasmelterythings:iron_shovel_head",
+    "extrasmelterythings:iron_sword_edge",
+    "extrasmelterythings:iron_hoe_head",
+    "extrasmelterythings:iron_mass"
+  ]
+}

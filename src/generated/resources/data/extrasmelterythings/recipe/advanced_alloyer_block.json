@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "extrasmelterythings:basic_alloyer_block"
+    },
+    "C": {
+      "item": "extrasmelterythings:carbon_steel_block"
+    },
+    "S": {
+      "item": "minecraft:stone_bricks"
+    }
+  },
+  "pattern": [
+    "SCS",
+    "SAS",
+    "CCC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "extrasmelterythings:advanced_alloyer_block"
+  }
+}
